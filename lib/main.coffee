@@ -18,7 +18,8 @@ module.exports =
   updateMenu: (menuList, def) ->
     return if not def
     for menu in menuList
-      key = menu.label
+      return if not menu.label
+      key = menu.label.replace(/&/g, "")
       set = def[key]
       continue if not set
       menu.label = set.value if set?
