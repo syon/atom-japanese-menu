@@ -2,8 +2,8 @@ Context:
   "atom-workspace":
     "application:inspect": "要素の検証"
   "atom-text-editor, .overlayer":
-    "core:undo": "↩ 取り消す"
-    "core:redo": "↪ やり直す"
+    "core:undo": "取り消す"
+    "core:redo": "やり直す"
     "core:cut": "カット"
     "core:copy": "コピー"
     "core:paste": "ペースト"

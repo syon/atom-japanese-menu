@@ -5,8 +5,8 @@ module.exports =
 
   delay: (that) ->
     CSON = require 'cson'
-    defM = CSON.load __dirname + '/../def/menu.cson'
-    defC = CSON.load __dirname + '/../def/context.cson'
+    defM = CSON.load __dirname + "/../def/menu_#{process.platform}.cson"
+    defC = CSON.load __dirname + "/../def/context.cson"
 
     # Menu
     that.updateMenu(atom.menu.template, defM.Menu)
@@ -18,7 +18,7 @@ module.exports =
   updateMenu: (menuList, def) ->
     return if not def
     for menu in menuList
-      return if not menu.label
+      continue if not menu.label
       key = menu.label.replace(/&/g, "")
       set = def[key]
       continue if not set
