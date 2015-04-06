@@ -57,9 +57,9 @@ Menu:
 		value: "編集"
 		submenu:
 			Undo:
-				value: "↩ 取り消す"
+				value: "取り消す"
 			Redo:
-				value: "↪ やり直す"
+				value: "やり直す"
 			Cut:
 				value: "カット"
 			Copy:
@@ -192,8 +192,12 @@ Menu:
 				value: "次の一致も選択"
 			"Select All":
 				value: "一致をすべて選択"
+			"Toggle Find in Buffer":
+				value: "検索パネル切替"
 			"Find in Project":
-				value: "プロジェクト内で検索"
+				value: "プロジェクト内で検索…"
+			"Toggle Find in Project":
+				value: "プロジェクト内で検索パネル切替"
 			"Find Next":
 				value: "次を検索"
 			"Find Previous":
@@ -230,6 +234,16 @@ Menu:
 						value: "次のペインにフォーカス"
 					"Focus Previous Pane":
 						value: "前のペインにフォーカス"
+					"Focus Pane Above":
+						value: "ペインにフォーカス ↑"
+					"Focus Pane Below":
+						value: "ペインにフォーカス ↓"
+					"Focus Pane On Left":
+						value: "ペインにフォーカス ←"
+					"Focus Pane On Right":
+						value: "ペインにフォーカス →"
+					"Close Pane":
+						value: "ペインを閉じる"
 			Developer:
 				value: "開発"
 				submenu:
