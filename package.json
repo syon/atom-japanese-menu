@@ -1,7 +1,7 @@
 {
   "name": "japanese-menu",
   "main": "./lib/main",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "メニューバーとコンテキストメニューを日本語化します。",
   "repository": "https://github.com/syon/atom-japanese-menu",
   "license": "MIT",
