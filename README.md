@@ -2,4 +2,4 @@
 
 Atom のメニューバーとコンテキストメニューを日本語化します。
 
-![screenshot](screenshot.png)
+![screenshot](https://github.com/syon/atom-japanese-menu/raw/master/screenshot.png)
