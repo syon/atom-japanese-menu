@@ -10,6 +10,8 @@ Menu:
 				value: "開く..."
 			"Open Folder...":
 				value: "フォルダを開く..."
+			"Add Project Folder...":
+				value: "プロジェクトフォルダを追加..."
 			"Reopen Last Item":
 				value: "最後に使用したファイルを開く"
 			Save:
