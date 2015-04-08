@@ -7,7 +7,7 @@ Menu:
 			"View License":
 				value: "ライセンスを表示"
 			"Preferences...":
-				value: "環境設定…"
+				value: "環境設定..."
 			"Open Your Config":
 				value: "個人設定を開く"
 			"Open Your Init Script":
@@ -38,13 +38,13 @@ Menu:
 			"New File":
 				value: "新規ファイル"
 			"Open...":
-				value: "開く…"
+				value: "開く..."
 			"Reopen Last Item":
-				value: "最後に使用したファイルを開く"
+				value: "最後に使用したファイルを開く..."
 			Save:
 				value: "保存"
 			"Save As...":
-				value: "別名で保存…"
+				value: "別名で保存..."
 			"Save All":
 				value: "すべて保存"
 			"Close Tab":
@@ -185,9 +185,9 @@ Menu:
 		value: "検索"
 		submenu:
 			"Find in Buffer":
-				value: "検索…"
+				value: "検索..."
 			"Replace in Buffer":
-				value: "置換…"
+				value: "置換..."
 			"Select Next":
 				value: "次の一致も選択"
 			"Select All":
@@ -195,7 +195,7 @@ Menu:
 			"Toggle Find in Buffer":
 				value: "検索パネル切替"
 			"Find in Project":
-				value: "プロジェクト内で検索…"
+				value: "プロジェクト内で検索..."
 			"Toggle Find in Project":
 				value: "プロジェクト内で検索パネル切替"
 			"Find Next":

@@ -7,15 +7,15 @@ Menu:
 			"New File":
 				value: "新規ファイル"
 			"Open File...":
-				value: "開く…"
+				value: "開く..."
 			"Open Folder...":
-				value: "フォルダを開く…"
+				value: "フォルダを開く..."
 			"Reopen Last Item":
 				value: "最後に使用したファイルを開く"
 			Save:
 				value: "保存"
 			"Save As...":
-				value: "別名で保存…"
+				value: "別名で保存..."
 			"Save All":
 				value: "すべて保存"
 			"Close Tab":
@@ -107,7 +107,7 @@ Menu:
 					"Fold Level 9":
 						value: "9段階折りたたむ"
 			Preferences:
-				value: "環境設定…"
+				value: "環境設定..."
 			"Open Your Config":
 				value: "個人設定を開く"
 			"Open Your Init Script":
@@ -222,9 +222,9 @@ Menu:
 		value: "検索"
 		submenu:
 			"Find in Buffer":
-				value: "検索…"
+				value: "検索..."
 			"Replace in Buffer":
-				value: "置換…"
+				value: "置換..."
 			"Select Next":
 				value: "次の一致も選択"
 			"Select All":
@@ -232,7 +232,7 @@ Menu:
 			"Toggle Find in Buffer":
 				value: "検索パネル切替"
 			"Find in Project":
-				value: "プロジェクト内で検索…"
+				value: "プロジェクト内で検索..."
 			"Toggle Find in Project":
 				value: "プロジェクト内で検索パネル切替"
 			"Find Next":

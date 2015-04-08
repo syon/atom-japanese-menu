@@ -48,7 +48,7 @@ Context:
   ".tree-view.full-menu":
     "tree-view:add-file": "新規ファイル"
     "tree-view:add-folder": "新規フォルダ"
-    "tree-view:move": "移動・名称変更…"
+    "tree-view:move": "移動・名称変更..."
     "tree-view:duplicate": "複製"
     "tree-view:remove": "削除"
     "tree-view:copy": "コピー"
@@ -65,7 +65,7 @@ Context:
   ".tree-view.full-menu .project-root > .header":
     "tree-view:add-file": "新規ファイル"
     "tree-view:add-folder": "新規フォルダ"
-    "tree-view:move": "移動・名称変更…"
+    "tree-view:move": "移動・名称変更..."
     "tree-view:duplicate": "複製"
     "tree-view:remove": "削除"
     "tree-view:copy": "コピー"
