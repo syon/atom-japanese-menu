@@ -19,7 +19,7 @@ module.exports =
     return if not def
     for menu in menuList
       continue if not menu.label
-      key = menu.label.replace(/&/g, "")
+      key = menu.label
       set = def[key]
       continue if not set
       menu.label = set.value if set?
