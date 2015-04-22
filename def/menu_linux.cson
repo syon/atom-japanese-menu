@@ -1,95 +1,95 @@
 Menu:
-	File:
-		value: "ファイル"
+	"&File":
+		value: "ファイル(&F)"
 		submenu:
-			"New Window":
-				value: "新規ウインドウ"
-			"New File":
-				value: "新規ファイル"
-			"Open File...":
-				value: "開く..."
+			"New &Window":
+				value: "新規ウインドウ(&W)"
+			"&New File":
+				value: "新規ファイル(&N)"
+			"&Open File...":
+				value: "開く(&O)..."
 			"Open Folder...":
 				value: "フォルダを開く..."
 			"Add Project Folder...":
 				value: "プロジェクトフォルダを追加..."
-			"Reopen Last Item":
-				value: "最後に使用したファイルを開く"
-			Save:
-				value: "保存"
-			"Save As...":
-				value: "別名で保存..."
-			"Save All":
-				value: "すべて保存"
-			"Close Tab":
-				value: "タブを閉じる"
-			"Close Pane":
-				value: "ペインを閉じる"
-			"Close Window":
-				value: "ウインドウを閉じる"
+			"Reopen Last &Item":
+				value: "最後に使用したファイルを開く(&I)"
+			"&Save":
+				value: "保存(&S)"
+			"Save &As...":
+				value: "別名で保存(&A)..."
+			"Save A&ll":
+				value: "すべて保存(&L)"
+			"&Close Tab":
+				value: "タブを閉じる(&C)"
+			"Close &Pane":
+				value: "ペインを閉じる(&P)"
+			"Clos&e Window":
+				value: "ウインドウを閉じる(&E)"
 			"Quit":
 				value: "終了"
-	Edit:
-		value: "編集"
+	"&Edit":
+		value: "編集(&E)"
 		submenu:
-			Undo:
-				value: "取り消す"
-			Redo:
-				value: "やり直す"
-			Cut:
-				value: "カット"
-			Copy:
-				value: "コピー"
-			"Copy Path":
-				value: "パスをコピー"
-			Paste:
-				value: "ペースト"
-			"Select All":
-				value: "すべて選択"
-			"Toggle Comments":
-				value: "コメントの切替"
+			"&Undo":
+				value: "取り消す(&U)"
+			"&Redo":
+				value: "やり直す(&R)"
+			"&Cut":
+				value: "カット(&C)"
+			"C&opy":
+				value: "コピー(&O)"
+			"Copy Pat&h":
+				value: "パスをコピー(&H)"
+			"&Paste":
+				value: "ペースト(&P)"
+			"Select &All":
+				value: "すべて選択(&A)"
+			"&Toggle Comments":
+				value: "コメントの切替(&T)"
 			Lines:
 				value: "行"
 				submenu:
-					Indent:
-						value: "インデントを追加"
-					Outdent:
-						value: "インデントを戻す"
-					"Auto Indent":
-						value: "自動インデント"
-					"Move Line Up":
-						value: "選択中の行を上に移動"
-					"Move Line Down":
-						value: "選択中の行を下に移動"
-					"Duplicate Lines":
-						value: "行を複製"
-					"Delete Line":
-						value: "行を削除"
-					"Join Lines":
-						value: "行を結合"
+					"&Indent":
+						value: "インデントを追加(&I)"
+					"&Outdent":
+						value: "インデントを戻す(&O)"
+					"&Auto Indent":
+						value: "自動インデント(&A)"
+					"Move Line &Up":
+						value: "選択中の行を上に移動(&U)"
+					"Move Line &Down":
+						value: "選択中の行を下に移動(&D)"
+					"Du&plicate Lines":
+						value: "行を複製(&P)"
+					"D&elete Line":
+						value: "行を削除(&E)"
+					"&Join Lines":
+						value: "行を結合(&J)"
 			Text:
 				value: "テキスト"
 				submenu:
-					"Upper Case":
-						value: "大文字に変換"
-					"Lower Case":
-						value: "小文字に変換"
-					"Delete to End of Word":
-						value: "単語の末尾まで削除"
-					"Delete Line":
-						value: "行を削除"
-					Transpose:
-						value: "前後を入れ替え"
+					"&Upper Case":
+						value: "大文字に変換(&U)"
+					"&Lower Case":
+						value: "小文字に変換(&L)"
+					"Delete to End of &Word":
+						value: "単語の末尾まで削除(&W)"
+					"&Delete Line":
+						value: "行を削除(&D)"
+					"&Transpose":
+						value: "前後を入れ替え(&T)"
 			Folding:
 				value: "折りたたみ"
 				submenu:
-					Fold:
-						value: "折りたたむ"
-					Unfold:
-						value: "折りたたみを戻す"
-					"Unfold All":
-						value: "すべての折りたたみを戻す"
-					"Fold All":
-						value: "すべて折りたたむ"
+					"&Fold":
+						value: "折りたたむ(&F)"
+					"&Unfold":
+						value: "折りたたみを戻す(&U)"
+					"Unfold &All":
+						value: "すべての折りたたみを戻す(&A)"
+					"Fol&d All":
+						value: "すべて折りたたむ(&D)"
 					"Fold Level 1":
 						value: "1段階折りたたむ"
 					"Fold Level 2":
@@ -108,8 +108,8 @@ Menu:
 						value: "8段階折りたたむ"
 					"Fold Level 9":
 						value: "9段階折りたたむ"
-			Preferences:
-				value: "環境設定..."
+			"&Preferences":
+				value: "環境設定(&P)..."
 			"Open Your Config":
 				value: "個人設定を開く"
 			"Open Your Init Script":
@@ -139,13 +139,13 @@ Menu:
 				value: "指定行に移動"
 			"Select Grammar":
 				value: "文法を選択"
-	View:
-		value: "表示"
+	"&View":
+		value: "表示(&V)"
 		submenu:
-			Reload:
-				value: "再読み込み"
-			"Toggle Full Screen":
-				value: "フルスクリーン切替"
+			"&Reload":
+				value: "再読み込み(&R)"
+			"Toggle &Full Screen":
+				value: "フルスクリーン切替(&F)"
 			"Toggle Menu Bar":
 				value: "メニューバー切替"
 			Panes:
@@ -163,65 +163,64 @@ Menu:
 						value: "次のペインにフォーカス"
 					"Focus Previous Pane":
 						value: "前のペインにフォーカス"
+					"Focus Pane Above":
+						value: "ペインにフォーカス ↑"
+					"Focus Pane Below":
+						value: "ペインにフォーカス ↓"
+					"Focus Pane On Left":
+						value: "ペインにフォーカス ←"
+					"Focus Pane On Right":
+						value: "ペインにフォーカス →"
+					"Close Pane":
+						value: "ペインを閉じる"
 			Developer:
 				value: "開発"
 				submenu:
-					"Open In Dev Mode...":
-						value: "開発モードで開く"
-					"Run Atom Specs":
-						value: "Atom Specs を実行"
-					"Run Package Specs":
-						value: "パッケージ Specs を実行"
-					"Toggle Developer Tools":
-						value: "デベロッパー ツール"
-			"Toggle Soft Wrap":
-				value: "自動折り返しの切替"
+					"Open In &Dev Mode...":
+						value: "開発モードで開く(&D)..."
+					"Run &Atom Specs":
+						value: "Atom Specs を実行(&A)"
+					"Run Package &Specs":
+						value: "パッケージ Specs を実行(&S)"
+					"Toggle Developer &Tools":
+						value: "デベロッパー ツール(&T)"
+			"Toggle Soft &Wrap":
+				value: "自動折り返しの切替(&W)"
 			"Toggle Command Palette":
 				value: "コマンドパレット"
 			"Toggle Tree View":
 				value: "ツリービュー"
-	Packages:
-		value: "パッケージ"
-	Window:
-		value: "ウインドウ"
+	"&Selection":
+		value: "選択(&S)"
 		submenu:
-			Minimize:
-				value: "最小化"
-			Zoom:
-				value: "拡大／縮小"
-			"Bring All to Front":
-				value: "すべてを手前に移動"
-	Selection:
-		value: "選択"
-		submenu:
-			"Add Selection Above":
-				value: "選択範囲を広げる ↑"
-			"Add Selection Below":
-				value: "選択範囲を広げる ↓"
+			"Add Selection &Above":
+				value: "選択範囲を広げる ↑(&A)"
+			"Add Selection &Below":
+				value: "選択範囲を広げる ↓(&B)"
+			"S&plit into Lines":
+				value: "選択範囲を各行に分割して同時操作(&P)"
 			"Single Selection":
 				value: "同時操作状態を解除"
-			"Split into Lines":
-				value: "選択範囲を各行に分割して同時操作"
-			"Select to Top":
-				value: "ファイル先頭まで選択"
-			"Select to Bottom":
-				value: "ファイル末尾まで選択"
-			"Select Line":
-				value: "行を選択"
-			"Select Word":
-				value: "単語を選択"
-			"Select to Beginning of Word":
-				value: "単語の先頭まで選択"
-			"Select to Beginning of Line":
-				value: "行頭まで選択"
-			"Select to First Character of Line":
-				value: "行の最初の文字まで選択"
-			"Select to End of Word":
-				value: "単語の末尾まで選択"
-			"Select to End of Line":
-				value: "行末まで選択"
-	Find:
-		value: "検索"
+			"Select to &Top":
+				value: "ファイル先頭まで選択(&T)"
+			"Select to Botto&m":
+				value: "ファイル末尾まで選択(&M)"
+			"Select &Line":
+				value: "行を選択(&L)"
+			"Select &Word":
+				value: "単語を選択(&W)"
+			"Select to Beginning of W&ord":
+				value: "単語の先頭まで選択(&O)"
+			"Select to Beginning of L&ine":
+				value: "行頭まで選択(&I)"
+			"Select to First &Character of Line":
+				value: "行の最初の文字まで選択(&C)"
+			"Select to End of Wor&d":
+				value: "単語の末尾まで選択(&D)"
+			"Select to End of Lin&e":
+				value: "行末まで選択(&E)"
+	"F&ind":
+		value: "検索(&I)"
 		submenu:
 			"Find in Buffer":
 				value: "検索..."
@@ -251,15 +250,17 @@ Menu:
 				value: "ファイルを検索"
 			"Find Modified File":
 				value: "修正されたファイルを検索"
-	Help:
-		value: "ヘルプ"
+	"&Packages":
+		value: "パッケージ(&P)"
+	"&Help":
+		value: "ヘルプ(&H)"
 		submenu:
-			"View Terms of Use":
-			  value: "利用条件"
-			"View License":
-			  value: "ライセンス"
-			Documentation:
-				value: "ドキュメント"
+			"View &Terms of Use":
+			  value: "利用条件(&T)"
+			"View &License":
+			  value: "ライセンス(&L)"
+			"&Documentation":
+				value: "ドキュメント(&D)"
 			Roadmap:
 				value: "ロードマップ"
 			"Frequently Asked Questions":
