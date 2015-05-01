@@ -20,13 +20,13 @@ Context:
     "pane:split-left": "ペイン分割 ←"
     "pane:split-right": "ペイン分割 →"
     "pane:close": "ペインを閉じる"
-  "atom-text-editor":
+  "atom-text-editor:not([mini])":
     "encoding-selector:show": "エンコーディング選択"
     "spell-check:correct-misspelling": "スペル修正"
     "symbols-view:go-to-declaration": "宣言に移動"
-  "atom-pane .item-views":
+  "atom-pane[data-active-item-path] .item-views":
     "tree-view:reveal-active-file": "ツリービューに表示"
-  "atom-pane .tab.active":
+  "atom-pane[data-active-item-path] .tab.active":
     "tree-view:reveal-active-file": "ツリービューに表示"
   ".overlayer":
     "autocomplete:toggle": "オートコンプリート"
