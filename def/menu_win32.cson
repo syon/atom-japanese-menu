@@ -87,6 +87,10 @@ Menu:
 						value: "小文字に変換(&L)"
 					"Delete to End of &Word":
 						value: "単語の末尾まで削除(&W)"
+					"Delete to Previous Word Boundary":
+						value: "前の単語の境界まで削除"
+					"Delete to Next Word Boundary":
+						value: "次の単語の境界まで削除"
 					"&Delete Line":
 						value: "行を削除(&D)"
 					"&Transpose":
@@ -184,6 +188,12 @@ Menu:
 						value: "パッケージ Specs を実行(&S)"
 					"Toggle Developer &Tools":
 						value: "デベロッパー ツール(&T)"
+			"&Increase Font Size":
+				value: "フォントサイズの拡大"
+			"&Decrease Font Size":
+				value: "フォントサイズの縮小"
+			"Re&set Font Size":
+				value: "フォントサイズのリセット"
 			"Toggle Soft &Wrap":
 				value: "自動折り返しの切替(&W)"
 			"Toggle Command Palette":
@@ -219,6 +229,8 @@ Menu:
 				value: "単語の末尾まで選択(&D)"
 			"Select to End of Lin&e":
 				value: "行末まで選択(&E)"
+			"Select Inside Brackets":
+				value: "カッコ内を選択"
 	"F&ind":
 		value: "検索(&I)"
 		submenu:
@@ -273,3 +285,5 @@ Menu:
 				value: "報告されている問題"
 			"Release Notes":
 				value: "リリースノート"
+			"Welcome Guide":
+				value: "ウェルカムガイド"
