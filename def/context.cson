@@ -1,6 +1,9 @@
 Context:
   "atom-workspace":
     "application:inspect": "要素の検証"
+  "atom-text-editor":
+    "color-picker:open": "カラーピッカー"
+    "minimap:toggle": "ミニマップ切替"
   "atom-text-editor, .overlayer":
     "core:undo": "取り消す"
     "core:redo": "やり直す"
@@ -62,6 +65,11 @@ Context:
     "tree-view:copy-full-path": "フルパスをコピー"
     "tree-view:copy-project-path": "プロジェクトパスをコピー"
     "tree-view:open-in-new-window": "新規ウインドウで開く"
+  '.tree-view.full-menu [is="tree-view-file"]':
+    "tree-view:open-selected-entry-up": "ペイン分割 ↑"
+    "tree-view:open-selected-entry-down": "ペイン分割 ↓"
+    "tree-view:open-selected-entry-left": "ペイン分割 ←"
+    "tree-view:open-selected-entry-right": "ペイン分割 →"
   ".tree-view.full-menu .project-root > .header":
     "tree-view:add-file": "新規ファイル"
     "tree-view:add-folder": "新規フォルダ"
