@@ -6,17 +6,17 @@ Menu:
         value: "新規ウインドウ(&W)"
       "&New File":
         value: "新規ファイル(&N)"
-      "&Open File...":
+      "&Open File…":
         value: "開く(&O)..."
-      "Open Folder...":
+      "Open Folder…":
         value: "フォルダを開く..."
-      "Add Project Folder...":
+      "Add Project Folder…":
         value: "プロジェクトフォルダを追加..."
       "Reopen Last &Item":
         value: "最後に使用したファイルを開く(&I)"
       "&Save":
         value: "保存(&S)"
-      "Save &As...":
+      "Save &As…":
         value: "別名で保存(&A)..."
       "Save A&ll":
         value: "すべて保存(&L)"
@@ -180,7 +180,7 @@ Menu:
       Developer:
         value: "開発"
         submenu:
-          "Open In &Dev Mode...":
+          "Open In &Dev Mode…":
             value: "開発モードで開く(&D)..."
           "Run &Atom Specs":
             value: "Atom Specs を実行(&A)"

@@ -6,7 +6,7 @@ Menu:
         value: "Atom について"
       "View License":
         value: "ライセンスを表示"
-      "Preferences...":
+      "Preferences…":
         value: "環境設定..."
       "Open Your Config":
         value: "個人設定を開く"
@@ -37,15 +37,15 @@ Menu:
         value: "新規ウインドウ"
       "New File":
         value: "新規ファイル"
-      "Open...":
+      "Open…":
         value: "開く..."
-      "Add Project Folder...":
+      "Add Project Folder…":
         value: "プロジェクトフォルダを追加..."
       "Reopen Last Item":
         value: "最後に使用したファイルを開く..."
       Save:
         value: "保存"
-      "Save As...":
+      "Save As…":
         value: "別名で保存..."
       "Save All":
         value: "すべて保存"
@@ -255,7 +255,7 @@ Menu:
       Developer:
         value: "開発"
         submenu:
-          "Open In Dev Mode...":
+          "Open In Dev Mode…":
             value: "開発モードで開く"
           "Run Atom Specs":
             value: "Atom Specs を実行"
