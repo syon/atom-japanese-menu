@@ -15,6 +15,10 @@ module.exports =
     # ContextMenu
     that.updateContextMenu(defC.Context)
 
+    # Settings
+    atom.commands.add 'atom-workspace', 'settings-view:open', ->
+      that.updateSettings()
+
   updateMenu: (menuList, def) ->
     return if not def
     for menu in menuList
@@ -34,3 +38,19 @@ module.exports =
         continue if item.type is "separator"
         label = set[item.command]
         item.label = label if label?
+
+  updateSettings: () ->
+    setTimeout(@delaySettings, 0, this)
+
+  delaySettings: (that) ->
+    panel = document.querySelector('.settings-view .panels-menu')
+    data = [
+      {label: "Settings", value: "設定"}
+      {label: "Keybindings", value: "キーバインド"}
+      {label: "Packages", value: "パッケージ"}
+      {label: "Themes", value: "テーマ"}
+      {label: "Updates", value: "パッケージの更新"}
+      {label: "Install", value: "パッケージのインストール"}
+    ]
+    for d in data
+      panel.querySelector("[name='#{d.label}']>a").text = d.value
