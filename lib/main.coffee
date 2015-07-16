@@ -66,5 +66,27 @@ module.exports =
       before = ext['textContent']
       ext['textContent'] = "設定フォルダを開く"
       ext.setAttribute('title', before)
+
+      data = [
+        {id: 'core.audioBeep', title: "ビープ音を鳴らす"}
+        {id: 'core.destroyEmptyPanes', title: "空になったペインを自動的に閉じる"}
+        {id: 'core.excludeVcsIgnoredPaths', title: "バージョン管理システムによって無視されたパスを除外する"}
+        {id: 'core.fileEncoding', title: "ファイルエンコーディング", desc: "ファイルを読み書きするためのデフォルトキャラクタセットを指定します。"}
+      ]
+      sp = document.querySelector('.settings-panel')
+      for d in data
+        that.applyTextContentBySettingsId(that, d)
     catch e
       console.error "日本語化に失敗しました。", e
+
+  applyTextContentBySettingsId: (that, data) ->
+    el = document.querySelector("[id='#{data.id}']")
+    ctrl = el.closest('.controls')
+    that.applyTextWithOrg(ctrl.querySelector('.setting-title'), data.title)
+    that.applyTextWithOrg(ctrl.querySelector('.setting-description'), data.desc)
+
+  applyTextWithOrg: (elem, text) ->
+    return unless text
+    before = elem.textContent
+    elem.textContent = text
+    elem.setAttribute('title', before)
