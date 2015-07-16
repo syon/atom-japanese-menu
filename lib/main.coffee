@@ -15,9 +15,10 @@ module.exports =
     # ContextMenu
     that.updateContextMenu(defC.Context)
 
-    # Settings
+    # Settings (on init and open)
+    that.updateSettings()
     atom.commands.add 'atom-workspace', 'settings-view:open', ->
-      that.updateSettings()
+      that.updateSettings(true)
 
   updateMenu: (menuList, def) ->
     return if not def
@@ -39,18 +40,31 @@ module.exports =
         label = set[item.command]
         item.label = label if label?
 
-  updateSettings: () ->
-    setTimeout(@delaySettings, 0, this)
+  updateSettings: (onOpen = false) ->
+    tab = document.querySelector('.tab-bar .active[data-type="SettingsView"]')
+    if tab != null || onOpen
+      setTimeout(@delaySettings, 0, this)
+    else
 
   delaySettings: (that) ->
-    panel = document.querySelector('.settings-view .panels-menu')
-    data = [
-      {label: "Settings", value: "設定"}
-      {label: "Keybindings", value: "キーバインド"}
-      {label: "Packages", value: "パッケージ"}
-      {label: "Themes", value: "テーマ"}
-      {label: "Updates", value: "パッケージの更新"}
-      {label: "Install", value: "パッケージのインストール"}
-    ]
-    for d in data
-      panel.querySelector("[name='#{d.label}']>a").text = d.value
+    try
+      panel = document.querySelector('.settings-view .panels-menu')
+      data = [
+        {label: "Settings", value: "設定"}
+        {label: "Keybindings", value: "キーバインド"}
+        {label: "Packages", value: "パッケージ"}
+        {label: "Themes", value: "テーマ"}
+        {label: "Updates", value: "アップデート"}
+        {label: "Install", value: "インストール"}
+      ]
+      for d in data
+        el = panel.querySelector("[name='#{d.label}']>a")
+        el.text = d.value
+        el.setAttribute('title', d.label)
+
+      ext = document.querySelector('.settings-view .icon-link-external')
+      before = ext['textContent']
+      ext['textContent'] = "設定フォルダを開く"
+      ext.setAttribute('title', before)
+    catch e
+      console.error "日本語化に失敗しました。", e
