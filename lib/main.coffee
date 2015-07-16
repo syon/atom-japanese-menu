@@ -72,6 +72,9 @@ module.exports =
         {id: 'core.destroyEmptyPanes', title: "空になったペインを自動的に閉じる"}
         {id: 'core.excludeVcsIgnoredPaths', title: "バージョン管理システムによって無視されたパスを除外する"}
         {id: 'core.fileEncoding', title: "ファイルエンコーディング", desc: "ファイルを読み書きするためのデフォルトキャラクタセットを指定します。"}
+        {id: 'core.followSymlinks', title: "シンボリックリンクをたどる", desc: "Fuzzy Finder でファイルを検索・開くときに使用されます。"}
+        {id: 'core.ignoredNames', title: "無視するファイル"}
+        {id: 'core.projectHome', title: "プロジェクトホーム"}
       ]
       sp = document.querySelector('.settings-panel')
       for d in data
@@ -81,12 +84,12 @@ module.exports =
 
   applyTextContentBySettingsId: (that, data) ->
     el = document.querySelector("[id='#{data.id}']")
-    ctrl = el.closest('.controls')
+    ctrl = el.closest('.control-group')
     that.applyTextWithOrg(ctrl.querySelector('.setting-title'), data.title)
     that.applyTextWithOrg(ctrl.querySelector('.setting-description'), data.desc)
 
   applyTextWithOrg: (elem, text) ->
     return unless text
-    before = elem.textContent
+    before = new String(elem.textContent)
     elem.textContent = text
     elem.setAttribute('title', before)
