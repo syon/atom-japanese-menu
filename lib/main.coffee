@@ -43,41 +43,67 @@ class JapaneseMenu
         item.label = label if label?
 
   updateSettings: (onSettingsOpen = false) ->
-    return if @doneSettings
-    setTimeout(@delaySettings, 0)
-    @doneSettings = true
+    setTimeout(@delaySettings, 0, onSettingsOpen)
 
-  delaySettings: () =>
+  delaySettings: (onSettingsOpen) =>
     settingsTab = document.querySelector('.tab-bar [data-type="SettingsView"]')
-    return unless settingsTab
-    settingsTab.querySelector('.title').textContent = "設定"
+    settingsEnabled = settingsTab.className.includes 'active'
+    return unless settingsTab && settingsEnabled
     try
-      panel = document.querySelector('.settings-view .panels-menu')
-      return unless panel
+      # Tab title
+      settingsTab.querySelector('.title').textContent = "設定"
+
+      # on Open
+      applyOnPanel()
+
+      # Add a event on menus which works when clicked
+      panelMenus = document.querySelectorAll('.settings-view .panels-menu li')
+      for panelMenu in panelMenus
+        panelMenu.addEventListener("click", applyOnPanel, false)
+
+      # Left-side menu
+      menu = document.querySelector('.settings-view .panels-menu')
+      return unless menu
       for d in @defS.Settings.menu
-        el = panel.querySelector("[name='#{d.label}']>a")
+        el = menu.querySelector("[name='#{d.label}']>a")
         applyTextWithOrg el, d.value
 
+      # Left-side button
       ext = document.querySelector('.settings-view .icon-link-external')
       applyTextWithOrg ext, "設定フォルダを開く"
 
-      sp = document.querySelector('.settings-panel')
-      for d in @defS.Settings.settings
-        applyTextContentBySettingsId(d)
     catch e
       console.error "日本語化に失敗しました。", e
 
+  applyOnPanel = (e) ->
+    activePanelName
+    if e
+      activePanelName = e.target.title
+    else
+      activePanel = document.querySelector('.panels-menu .active')
+      activePanelName = activePanel.getAttribute('name')
+
+    if activePanelName == "Settings"
+      # Settings panel
+      sp = document.querySelector('.settings-panel')
+      for d in window.JapaneseMenu.defS.Settings.settings
+        applyTextContentBySettingsId(d)
+
+    # Every panel
+    panel = document.querySelector('.panels>[style="display: block;"]')
+
   applyTextContentBySettingsId = (data) ->
     el = document.querySelector("[id='#{data.id}']")
+    return unless el
     ctrl = el.closest('.control-group')
     applyTextWithOrg(ctrl.querySelector('.setting-title'), data.title)
     applyTextWithOrg(ctrl.querySelector('.setting-description'), data.desc)
 
   applyTextWithOrg = (elem, text) ->
     return unless text
-    before = new String(elem.textContent)
+    before = String(elem.textContent)
+    return if before == text
     elem.textContent = text
     elem.setAttribute('title', before)
-    alert("before == text") if before == text
 
-module.exports = new JapaneseMenu()
+module.exports = window.JapaneseMenu = new JapaneseMenu()
