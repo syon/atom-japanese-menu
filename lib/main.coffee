@@ -43,7 +43,9 @@ class JapaneseMenu
         item.label = label if label?
 
   updateSettings: (onSettingsOpen = false) ->
+    return if @doneSettings
     setTimeout(@delaySettings, 0)
+    @doneSettings = true
 
   delaySettings: () =>
     settingsTab = document.querySelector('.tab-bar [data-type="SettingsView"]')
@@ -76,5 +78,6 @@ class JapaneseMenu
     before = new String(elem.textContent)
     elem.textContent = text
     elem.setAttribute('title', before)
+    alert("before == text") if before == text
 
 module.exports = new JapaneseMenu()
