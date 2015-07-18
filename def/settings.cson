@@ -46,7 +46,7 @@ Settings:
     {
       id: 'core.followSymlinks'
       title: "シンボリックリンクをたどる"
-      desc: "Fuzzy Finder でファイルを検索・開くときに使用されます。"
+      desc: "Fuzzy Finder でファイルを検索・開く時に使用されます。"
     }
     {
       id: 'core.ignoredNames'
@@ -55,5 +55,100 @@ Settings:
     {
       id: 'core.projectHome'
       title: "プロジェクトホーム"
+    }
+    {
+      id: 'editor.autoIndent'
+      title: "自動インデント"
+      desc: "新しい行を挿入（改行）した時、カーソル位置を自動的にインデントした位置に移動します。"
+    }
+    {
+      id: 'editor.autoIndentOnPaste'
+      title: "ペースト時に自動インデント"
+    }
+    {
+      id: 'editor.confirmCheckoutHeadRevision'
+      title: "変更を破棄して HEAD リビジョンに戻す時に確認する"
+    }
+    {
+      id: 'editor.fontFamily'
+      title: "フォント"
+      desc: "font-family"
+    }
+    {
+      id: 'editor.fontSize'
+      title: "フォントサイズ"
+      desc: "font-size (px)"
+    }
+    {
+      id: 'editor.lineHeight'
+      title: "行の高さ"
+      desc: "line-height (number)"
+    }
+    {
+      id: 'editor.nonWordCharacters'
+      title: "単語の一部として扱わない文字"
+    }
+    {
+      id: 'editor.preferredLineLength'
+      title: "右端ガイドの位置"
+    }
+    {
+      id: 'editor.scrollPastEnd'
+      title: "最終行を超えてスクロール"
+    }
+    {
+      id: 'editor.scrollSensitivity'
+      title: "スクロール速度"
+    }
+    {
+      id: 'editor.showIndentGuide'
+      title: "インデントガイドを表示"
+    }
+    {
+      id: 'editor.showInvisibles'
+      title: "不可視文字を表示"
+      desc: "タブやスペース、改行などの見えない文字を記号として表示します。"
+    }
+    {
+      id: 'editor.showLineNumbers'
+      title: "行番号を表示"
+    }
+    {
+      id: 'editor.softTabs'
+      title: "ソフトタブ"
+      desc: "タブ文字の代わりにスペースを連ねて挿入します。"
+    }
+    {
+      id: 'editor.softWrap'
+      title: "ソフトラップ"
+      desc: "ウィンドウ幅を超えた時に折り返して表示します。「右端ガイドの位置でソフトラップ」が有効の場合は「右端ガイドの位置」の設定値で折り返されます。"
+    }
+    {
+      id: 'editor.softWrapAtPreferredLineLength'
+      title: "右端ガイドの位置でソフトラップ"
+      desc: "「右端ガイドの位置」の設定値で折り返します。この設定はソフトラップがグローバルまたは作業中の言語で有効な場合のみ適用されます。"
+    }
+    {
+      id: 'editor.softWrapHangingIndent'
+      title: "ソフトラップ時のインデント幅"
+    }
+    {
+      id: 'editor.tabLength'
+      title: "タブ幅"
+    }
+    {
+      id: 'editor.undoGroupingInterval'
+      title: "取り消し操作単位"
+      desc: "ひとまとまりの操作と認識させて取り消し履歴に登録する間隔（ミリ秒）"
+    }
+    {
+      id: 'editor.useShadowDOM'
+      title: "Shadow DOM を使う"
+      desc: "パッケージやテーマによる表示上の問題があった場合に無効にしてください。このオプションはいずれ無くすため、対象のパッケージまたはテーマに issue で報告してください。"
+    }
+    {
+      id: 'editor.zoomFontWhenCtrlScrolling'
+      title: "Ctrlスクロールでフォントサイズを変える"
+      desc: "コントロールキーを押しながらスクロールを上下することでエディタのフォントサイズを拡大/縮小します。"
     }
   ]
