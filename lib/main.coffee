@@ -1,21 +1,17 @@
 class JapaneseMenu
 
-  _defM = {}
-  _defC = {}
-  _defS = {}
-
   constructor: ->
     CSON = require 'cson'
-    _defM = CSON.load __dirname + "/../def/menu_#{process.platform}.cson"
-    _defC = CSON.load __dirname + "/../def/context.cson"
-    _defS = CSON.load __dirname + "/../def/settings.cson"
+    @defM = CSON.load __dirname + "/../def/menu_#{process.platform}.cson"
+    @defC = CSON.load __dirname + "/../def/context.cson"
+    @defS = CSON.load __dirname + "/../def/settings.cson"
 
   activate: (state) ->
     setTimeout(@delay, 0)
 
   delay: () =>
     # Menu
-    @updateMenu(atom.menu.template)
+    @updateMenu(atom.menu.template, @defM.Menu)
     atom.menu.update()
 
     # ContextMenu
@@ -26,12 +22,12 @@ class JapaneseMenu
     atom.commands.add 'atom-workspace', 'settings-view:open', =>
       @updateSettings(true)
 
-  updateMenu: (menuList) ->
-    return if not _defM.Menu
+  updateMenu: (menuList, def) ->
+    return if not def
     for menu in menuList
       continue if not menu.label
       key = menu.label
-      set = _defM.Menu[key]
+      set = def[key]
       continue if not set
       menu.label = set.value if set?
       if menu.submenu?
@@ -39,7 +35,7 @@ class JapaneseMenu
 
   updateContextMenu: () ->
     for itemSet in atom.contextMenu.itemSets
-      set = _defC.Context[itemSet.selector]
+      set = @defC.Context[itemSet.selector]
       continue if not set
       for item in itemSet.items
         continue if item.type is "separator"
@@ -52,10 +48,10 @@ class JapaneseMenu
       setTimeout(@delaySettings, 0)
     else
 
-  delaySettings: () ->
+  delaySettings: () =>
     try
       panel = document.querySelector('.settings-view .panels-menu')
-      for d in _defS.Settings.menu
+      for d in @defS.Settings.menu
         el = panel.querySelector("[name='#{d.label}']>a")
         applyTextWithOrg el, d.value
 
@@ -63,7 +59,7 @@ class JapaneseMenu
       applyTextWithOrg ext, "設定フォルダを開く"
 
       sp = document.querySelector('.settings-panel')
-      for d in _defS.Settings.settings
+      for d in @defS.Settings.settings
         applyTextContentBySettingsId(d)
     catch e
       console.error "日本語化に失敗しました。", e
