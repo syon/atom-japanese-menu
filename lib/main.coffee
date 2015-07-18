@@ -42,15 +42,16 @@ class JapaneseMenu
         label = set[item.command]
         item.label = label if label?
 
-  updateSettings: (onOpen = false) ->
-    tab = document.querySelector('.tab-bar .active[data-type="SettingsView"]')
-    if tab != null || onOpen
-      setTimeout(@delaySettings, 0)
-    else
+  updateSettings: (onSettingsOpen = false) ->
+    setTimeout(@delaySettings, 0)
 
   delaySettings: () =>
+    settingsTab = document.querySelector('.tab-bar [data-type="SettingsView"]')
+    return unless settingsTab
+    settingsTab.querySelector('.title').textContent = "設定"
     try
       panel = document.querySelector('.settings-view .panels-menu')
+      return unless panel
       for d in @defS.Settings.menu
         el = panel.querySelector("[name='#{d.label}']>a")
         applyTextWithOrg el, d.value
