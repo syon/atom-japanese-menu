@@ -1,64 +1,61 @@
-module.exports =
+class JapaneseMenu
+
+  _defM = {}
+  _defC = {}
+  _defS = {}
+
+  constructor: ->
+    CSON = require 'cson'
+    _defM = CSON.load __dirname + "/../def/menu_#{process.platform}.cson"
+    _defC = CSON.load __dirname + "/../def/context.cson"
+    _defS = CSON.load __dirname + "/../def/settings.cson"
 
   activate: (state) ->
     setTimeout(@delay, 0, this)
 
   delay: (that) ->
-    CSON = require 'cson'
-    defM = CSON.load __dirname + "/../def/menu_#{process.platform}.cson"
-    defC = CSON.load __dirname + "/../def/context.cson"
-    defS = CSON.load __dirname + "/../def/settings.cson"
-
     # Menu
-    that.updateMenu(atom.menu.template, defM.Menu)
+    that.updateMenu(atom.menu.template)
     atom.menu.update()
 
     # ContextMenu
-    that.updateContextMenu(defC.Context)
+    that.updateContextMenu()
 
     # Settings (on init and open)
     that.updateSettings()
     atom.commands.add 'atom-workspace', 'settings-view:open', ->
       that.updateSettings(true)
 
-  updateMenu: (menuList, def) ->
-    return if not def
+  updateMenu: (menuList) ->
+    return if not _defM.Menu
     for menu in menuList
       continue if not menu.label
       key = menu.label
-      set = def[key]
+      set = _defM.Menu[key]
       continue if not set
       menu.label = set.value if set?
       if menu.submenu?
         @updateMenu(menu.submenu, set.submenu)
 
-  updateContextMenu: (def) ->
+  updateContextMenu: () ->
     for itemSet in atom.contextMenu.itemSets
-      set = def[itemSet.selector]
+      set = _defC.Context[itemSet.selector]
       continue if not set
       for item in itemSet.items
         continue if item.type is "separator"
         label = set[item.command]
         item.label = label if label?
 
-  updateSettings: (defS, onOpen = false) ->
+  updateSettings: (onOpen = false) ->
     tab = document.querySelector('.tab-bar .active[data-type="SettingsView"]')
     if tab != null || onOpen
-      setTimeout(@delaySettings, 0, this, defS)
+      setTimeout(@delaySettings, 0, this)
     else
 
-  delaySettings: (that, defS) ->
+  delaySettings: (that) ->
     try
       panel = document.querySelector('.settings-view .panels-menu')
-      data = [
-        {label: "Settings", value: "設定"}
-        {label: "Keybindings", value: "キーバインド"}
-        {label: "Packages", value: "パッケージ"}
-        {label: "Themes", value: "テーマ"}
-        {label: "Updates", value: "アップデート"}
-        {label: "Install", value: "インストール"}
-      ]
-      for d in data
+      for d in _defS.Settings.menu
         el = panel.querySelector("[name='#{d.label}']>a")
         el.text = d.value
         el.setAttribute('title', d.label)
@@ -68,17 +65,8 @@ module.exports =
       ext['textContent'] = "設定フォルダを開く"
       ext.setAttribute('title', before)
 
-      data = [
-        {id: 'core.audioBeep', title: "ビープ音を鳴らす"}
-        {id: 'core.destroyEmptyPanes', title: "空になったペインを自動的に閉じる"}
-        {id: 'core.excludeVcsIgnoredPaths', title: "バージョン管理システムによって無視されたパスを除外する"}
-        {id: 'core.fileEncoding', title: "ファイルエンコーディング", desc: "ファイルを読み書きするためのデフォルトキャラクタセットを指定します。"}
-        {id: 'core.followSymlinks', title: "シンボリックリンクをたどる", desc: "Fuzzy Finder でファイルを検索・開くときに使用されます。"}
-        {id: 'core.ignoredNames', title: "無視するファイル"}
-        {id: 'core.projectHome', title: "プロジェクトホーム"}
-      ]
       sp = document.querySelector('.settings-panel')
-      for d in data
+      for d in _defS.Settings.settings
         that.applyTextContentBySettingsId(that, d)
     catch e
       console.error "日本語化に失敗しました。", e
@@ -94,3 +82,5 @@ module.exports =
     before = new String(elem.textContent)
     elem.textContent = text
     elem.setAttribute('title', before)
+
+module.exports = new JapaneseMenu()

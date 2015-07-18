@@ -1,9 +1,59 @@
 Settings:
   menu: [
-    {label: "Settings", value: "設定"}
-    {label: "Keybindings", value: "キーバインド"}
-    {label: "Packages", value: "パッケージ"}
-    {label: "Themes", value: "テーマ"}
-    {label: "Updates", value: "アップデート"}
-    {label: "Install", value: "インストール"}
+    {
+      label: "Settings"
+      value: "設定"
+    }
+    {
+      label: "Keybindings"
+      value: "キーバインド"
+    }
+    {
+      label: "Packages"
+      value: "パッケージ"
+    }
+    {
+      label: "Themes"
+      value: "テーマ"
+    }
+    {
+      label: "Updates"
+      value: "アップデート"
+    }
+    {
+      label: "Install"
+      value: "インストール"
+    }
+  ]
+  settings: [
+    {
+      id: 'core.audioBeep'
+      title: "ビープ音を鳴らす"
+    }
+    {
+      id: 'core.destroyEmptyPanes'
+      title: "空になったペインを自動的に閉じる"
+    }
+    {
+      id: 'core.excludeVcsIgnoredPaths'
+      title: "バージョン管理システムによって無視されたパスを除外する"
+    }
+    {
+      id: 'core.fileEncoding'
+      title: "ファイルエンコーディング"
+      desc: "ファイルを読み書きするためのデフォルトキャラクタセットを指定します。"
+    }
+    {
+      id: 'core.followSymlinks'
+      title: "シンボリックリンクをたどる"
+      desc: "Fuzzy Finder でファイルを検索・開くときに使用されます。"
+    }
+    {
+      id: 'core.ignoredNames'
+      title: "無視するファイル"
+    }
+    {
+      id: 'core.projectHome'
+      title: "プロジェクトホーム"
+    }
   ]
