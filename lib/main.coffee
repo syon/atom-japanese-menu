@@ -7,6 +7,7 @@ module.exports =
     CSON = require 'cson'
     defM = CSON.load __dirname + "/../def/menu_#{process.platform}.cson"
     defC = CSON.load __dirname + "/../def/context.cson"
+    defS = CSON.load __dirname + "/../def/settings.cson"
 
     # Menu
     that.updateMenu(atom.menu.template, defM.Menu)
@@ -40,13 +41,13 @@ module.exports =
         label = set[item.command]
         item.label = label if label?
 
-  updateSettings: (onOpen = false) ->
+  updateSettings: (defS, onOpen = false) ->
     tab = document.querySelector('.tab-bar .active[data-type="SettingsView"]')
     if tab != null || onOpen
-      setTimeout(@delaySettings, 0, this)
+      setTimeout(@delaySettings, 0, this, defS)
     else
 
-  delaySettings: (that) ->
+  delaySettings: (that, defS) ->
     try
       panel = document.querySelector('.settings-view .panels-menu')
       data = [

@@ -1,0 +1,9 @@
+Settings:
+  menu: [
+    {label: "Settings", value: "設定"}
+    {label: "Keybindings", value: "キーバインド"}
+    {label: "Packages", value: "パッケージ"}
+    {label: "Themes", value: "テーマ"}
+    {label: "Updates", value: "アップデート"}
+    {label: "Install", value: "インストール"}
+  ]
