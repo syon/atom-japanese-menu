@@ -47,19 +47,22 @@ class JapaneseMenu
 
   delaySettings: (onSettingsOpen) =>
     settingsTab = document.querySelector('.tab-bar [data-type="SettingsView"]')
-    settingsEnabled = settingsTab.className.includes 'active'
+    settingsEnabled = settingsTab.className.includes 'active' if settingsTab
     return unless settingsTab && settingsEnabled
     try
       # Tab title
       settingsTab.querySelector('.title').textContent = "設定"
 
-      # on Open
-      applyOnPanel()
-
-      # Add a event on menus which works when clicked
-      panelMenus = document.querySelectorAll('.settings-view .panels-menu li')
+      # Load all settings panels
+      lastMenu = document.querySelector('.panels-menu .active a')
+      panelMenus = document.querySelectorAll('.settings-view .panels-menu li a')
       for panelMenu in panelMenus
-        panelMenu.addEventListener("click", applyOnPanel, false)
+        panelMenu.click()
+      # Restore last active menu
+      lastMenu.click() if lastMenu
+
+      # on Init
+      applyToPanel()
 
       # Left-side menu
       menu = document.querySelector('.settings-view .panels-menu')
@@ -75,22 +78,13 @@ class JapaneseMenu
     catch e
       console.error "日本語化に失敗しました。", e
 
-  applyOnPanel = (e) ->
-    activePanelName
-    if e
-      activePanelName = e.target.title
-    else
-      activePanel = document.querySelector('.panels-menu .active')
-      activePanelName = activePanel.getAttribute('name')
-
-    if activePanelName == "Settings"
-      # Settings panel
-      sp = document.querySelector('.settings-panel')
-      for d in window.JapaneseMenu.defS.Settings.settings
-        applyTextContentBySettingsId(d)
+  applyToPanel = (e) ->
+    # Settings panel
+    for d in window.JapaneseMenu.defS.Settings.settings
+      applyTextContentBySettingsId(d)
 
     # Every panel
-    panel = document.querySelector('.panels>[style="display: block;"]')
+    #TODO
 
   applyTextContentBySettingsId = (data) ->
     el = document.querySelector("[id='#{data.id}']")
