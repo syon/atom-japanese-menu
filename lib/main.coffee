@@ -11,20 +11,20 @@ class JapaneseMenu
     _defS = CSON.load __dirname + "/../def/settings.cson"
 
   activate: (state) ->
-    setTimeout(@delay, 0, this)
+    setTimeout(@delay, 0)
 
-  delay: (that) ->
+  delay: () =>
     # Menu
-    that.updateMenu(atom.menu.template)
+    @updateMenu(atom.menu.template)
     atom.menu.update()
 
     # ContextMenu
-    that.updateContextMenu()
+    @updateContextMenu()
 
     # Settings (on init and open)
-    that.updateSettings()
-    atom.commands.add 'atom-workspace', 'settings-view:open', ->
-      that.updateSettings(true)
+    @updateSettings()
+    atom.commands.add 'atom-workspace', 'settings-view:open', =>
+      @updateSettings(true)
 
   updateMenu: (menuList) ->
     return if not _defM.Menu
@@ -49,35 +49,32 @@ class JapaneseMenu
   updateSettings: (onOpen = false) ->
     tab = document.querySelector('.tab-bar .active[data-type="SettingsView"]')
     if tab != null || onOpen
-      setTimeout(@delaySettings, 0, this)
+      setTimeout(@delaySettings, 0)
     else
 
-  delaySettings: (that) ->
+  delaySettings: () ->
     try
       panel = document.querySelector('.settings-view .panels-menu')
       for d in _defS.Settings.menu
         el = panel.querySelector("[name='#{d.label}']>a")
-        el.text = d.value
-        el.setAttribute('title', d.label)
+        applyTextWithOrg el, d.value
 
       ext = document.querySelector('.settings-view .icon-link-external')
-      before = ext['textContent']
-      ext['textContent'] = "設定フォルダを開く"
-      ext.setAttribute('title', before)
+      applyTextWithOrg ext, "設定フォルダを開く"
 
       sp = document.querySelector('.settings-panel')
       for d in _defS.Settings.settings
-        that.applyTextContentBySettingsId(that, d)
+        applyTextContentBySettingsId(d)
     catch e
       console.error "日本語化に失敗しました。", e
 
-  applyTextContentBySettingsId: (that, data) ->
+  applyTextContentBySettingsId = (data) ->
     el = document.querySelector("[id='#{data.id}']")
     ctrl = el.closest('.control-group')
-    that.applyTextWithOrg(ctrl.querySelector('.setting-title'), data.title)
-    that.applyTextWithOrg(ctrl.querySelector('.setting-description'), data.desc)
+    applyTextWithOrg(ctrl.querySelector('.setting-title'), data.title)
+    applyTextWithOrg(ctrl.querySelector('.setting-description'), data.desc)
 
-  applyTextWithOrg: (elem, text) ->
+  applyTextWithOrg = (elem, text) ->
     return unless text
     before = new String(elem.textContent)
     elem.textContent = text
