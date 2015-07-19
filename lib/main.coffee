@@ -83,14 +83,39 @@ class JapaneseMenu
     for d in window.JapaneseMenu.defS.Settings.settings
       applyTextContentBySettingsId(d)
 
-    # Updates panel
     sv = document.querySelector('.settings-view')
-    h1 = sv.querySelector('h1.section-heading.icon-cloud-download')
-    h1.childNodes[2].textContent = "利用可能なアップデート"
-    applyTextWithOrg(h1.querySelector('.update-all-button.btn-primary'), "すべてアップデート")
-    applyTextWithOrg(h1.querySelector('.update-all-button:not(.btn-primary)'), "アップデートをチェック")
+
+    # Updates panel
+    applySpecialHeading(sv, "Available Updates", 2, "利用可能なアップデート")
+    applyTextWithOrg(sv.querySelector('.update-all-button.btn-primary'), "すべてアップデート")
+    applyTextWithOrg(sv.querySelector('.update-all-button:not(.btn-primary)'), "アップデートをチェック")
     applyTextWithOrg(sv.querySelector('.alert.icon-hourglass'), "アップデートを確認中...")
     applyTextWithOrg(sv.querySelector('.alert.icon-heart'), "インストール済みのパッケージはすべて最新です！")
+
+    # Install panel
+    applySectionHeadings(sv)
+
+  applySpecialHeading = (area, org, childIdx, text) ->
+    sh = getTextMatchElement(area, '.section-heading', org)
+    sh.childNodes[childIdx].textContent = null
+    span = document.createElement('span')
+    span.textContent = org
+    applyTextWithOrg(span, text)
+    sh.appendChild(span)
+
+  applySectionHeadings = (area) ->
+    for sh in window.JapaneseMenu.defS.Settings.sectionHeadings
+      el = getTextMatchElement(area, '.section-heading', sh.label)
+      applyTextWithOrg(el, sh.value)
+    for sh in window.JapaneseMenu.defS.Settings.subSectionHeadings
+      el = getTextMatchElement(area, '.sub-section-heading', sh.label)
+      applyTextWithOrg(el, sh.value)
+
+  getTextMatchElement = (area, query, text) ->
+    elems = area.querySelectorAll(query)
+    for el in elems
+      return el if el.textContent.includes(text)
+    null
 
   applyTextContentBySettingsId = (data) ->
     el = document.querySelector("[id='#{data.id}']")
