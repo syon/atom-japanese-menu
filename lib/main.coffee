@@ -83,8 +83,14 @@ class JapaneseMenu
     for d in window.JapaneseMenu.defS.Settings.settings
       applyTextContentBySettingsId(d)
 
-    # Every panel
-    #TODO
+    # Updates panel
+    sv = document.querySelector('.settings-view')
+    h1 = sv.querySelector('h1.section-heading.icon-cloud-download')
+    h1.childNodes[2].textContent = "利用可能なアップデート"
+    applyTextWithOrg(h1.querySelector('.update-all-button.btn-primary'), "すべてアップデート")
+    applyTextWithOrg(h1.querySelector('.update-all-button:not(.btn-primary)'), "アップデートをチェック")
+    applyTextWithOrg(sv.querySelector('.alert.icon-hourglass'), "アップデートを確認中...")
+    applyTextWithOrg(sv.querySelector('.alert.icon-heart'), "インストール済みのパッケージはすべて最新です！")
 
   applyTextContentBySettingsId = (data) ->
     el = document.querySelector("[id='#{data.id}']")
