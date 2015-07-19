@@ -87,12 +87,14 @@ class JapaneseMenu
 
     # Keybindings
     info = sv.querySelector('.keybinding-panel>div:nth-child(2)')
-    info.querySelector('span:nth-child(2)').textContent = "これらのキーバインドは　"
-    info.querySelector('span:nth-child(4)').textContent = "をクリック（コピー）して"
-    info.querySelector('a.link').textContent = " キーマップファイル "
-    span = document.createElement('span')
-    span.textContent = "に貼り付けると上書きできます。"
-    info.appendChild(span)
+    unless isAlreadyLocalized(info)
+      info.querySelector('span:nth-child(2)').textContent = "これらのキーバインドは　"
+      info.querySelector('span:nth-child(4)').textContent = "をクリック（コピー）して"
+      info.querySelector('a.link').textContent = " キーマップファイル "
+      span = document.createElement('span')
+      span.textContent = "に貼り付けると上書きできます。"
+      info.appendChild(span)
+      info.setAttribute('data-localized', 'true')
 
     # Themes panel
     info = sv.querySelector('.themes-panel>div>div:nth-child(2)')
@@ -132,6 +134,7 @@ class JapaneseMenu
 
   applySpecialHeading = (area, org, childIdx, text) ->
     sh = getTextMatchElement(area, '.section-heading', org)
+    return unless sh
     sh.childNodes[childIdx].textContent = null
     span = document.createElement('span')
     span.textContent = org
@@ -141,16 +144,28 @@ class JapaneseMenu
   applySectionHeadings = (area) ->
     for sh in window.JapaneseMenu.defS.Settings.sectionHeadings
       el = getTextMatchElement(area, '.section-heading', sh.label)
+      continue unless el
       applyTextWithOrg(el, sh.value)
     for sh in window.JapaneseMenu.defS.Settings.subSectionHeadings
       el = getTextMatchElement(area, '.sub-section-heading', sh.label)
+      continue unless el
       applyTextWithOrg(el, sh.value)
 
   getTextMatchElement = (area, query, text) ->
     elems = area.querySelectorAll(query)
+    result
     for el in elems
-      return el if el.textContent.includes(text)
-    null
+      if el.textContent.includes(text)
+        result = el
+        break
+    if isAlreadyLocalized(result)
+      return null
+    else
+      return result
+
+  isAlreadyLocalized = (elem) ->
+    localized = elem.getAttribute('data-localized') if elem
+    return localized == 'true'
 
   applyTextContentBySettingsId = (data) ->
     el = document.querySelector("[id='#{data.id}']")
@@ -165,5 +180,6 @@ class JapaneseMenu
     return if before == text
     elem.textContent = text
     elem.setAttribute('title', before)
+    elem.setAttribute('data-localized', 'true')
 
 module.exports = window.JapaneseMenu = new JapaneseMenu()
