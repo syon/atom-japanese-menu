@@ -95,6 +95,18 @@ class JapaneseMenu
     # Install panel
     applySectionHeadings(sv)
 
+    # Buttons
+    for btn in sv.querySelectorAll('.meta-controls .install-button')
+      btn.textContent = "インストール"
+    for btn in sv.querySelectorAll('.meta-controls .settings')
+      btn.textContent = "設定"
+    for btn in sv.querySelectorAll('.meta-controls .uninstall-button')
+      btn.textContent = "アンインストール"
+    for btn in sv.querySelectorAll('.meta-controls .icon-playback-pause span')
+      btn.textContent = "無効にする"
+    for btn in sv.querySelectorAll('.meta-controls .icon-playback-play span')
+      btn.textContent = "有効にする"
+
   applySpecialHeading = (area, org, childIdx, text) ->
     sh = getTextMatchElement(area, '.section-heading', org)
     sh.childNodes[childIdx].textContent = null
