@@ -49,6 +49,11 @@ Settings:
       title: "ビープ音を鳴らす"
     }
     {
+      id: 'core.autoHideMenuBar'
+      title: "メニューバーを自動的に隠す"
+      desc: "メニューバーを自動的に隠して Alt キーで切り替えます。この設定は Windows と Linux でのみサポートされます。"
+    }
+    {
       id: 'core.destroyEmptyPanes'
       title: "空になったペインを自動的に閉じる"
     }
@@ -166,7 +171,7 @@ Settings:
     }
     {
       id: 'editor.zoomFontWhenCtrlScrolling'
-      title: "Ctrlスクロールでフォントサイズを変える"
+      title: "Ctrl スクロールでフォントサイズを変える"
       desc: "コントロールキーを押しながらスクロールを上下することでエディタのフォントサイズを拡大/縮小します。"
     }
   ]
