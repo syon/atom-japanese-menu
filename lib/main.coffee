@@ -58,8 +58,9 @@ class JapaneseMenu
       # Load all settings panels
       lastMenu = sv.querySelector('.panels-menu .active a')
       panelMenus = sv.querySelectorAll('.settings-view .panels-menu li a')
-      for panelMenu in panelMenus
-        panelMenu.click()
+      for pm in panelMenus
+        pm.click()
+        pm.addEventListener('click', applyInstallPanelOnSwitch)
       # Restore last active menu
       lastMenu.click() if lastMenu
 
