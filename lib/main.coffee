@@ -53,9 +53,11 @@ class JapaneseMenu
       # Tab title
       settingsTab.querySelector('.title').textContent = "設定"
 
+      sv = document.querySelector('.settings-view')
+
       # Load all settings panels
-      lastMenu = document.querySelector('.panels-menu .active a')
-      panelMenus = document.querySelectorAll('.settings-view .panels-menu li a')
+      lastMenu = sv.querySelector('.panels-menu .active a')
+      panelMenus = sv.querySelectorAll('.settings-view .panels-menu li a')
       for panelMenu in panelMenus
         panelMenu.click()
       # Restore last active menu
@@ -65,15 +67,20 @@ class JapaneseMenu
       applyToPanel()
 
       # Left-side menu
-      menu = document.querySelector('.settings-view .panels-menu')
+      menu = sv.querySelector('.settings-view .panels-menu')
       return unless menu
       for d in @defS.Settings.menu
         el = menu.querySelector("[name='#{d.label}']>a")
         applyTextWithOrg el, d.value
 
       # Left-side button
-      ext = document.querySelector('.settings-view .icon-link-external')
+      ext = sv.querySelector('.settings-view .icon-link-external')
       applyTextWithOrg ext, "設定フォルダを開く"
+
+      # Add Events
+      btns = sv.querySelectorAll('div.section:not(.themes-panel) .search-container .btn')
+      for btn in btns
+        btn.addEventListener('click', applyInstallPanelOnSwitch)
 
     catch e
       console.error "日本語化に失敗しました。", e
@@ -98,58 +105,86 @@ class JapaneseMenu
 
     # Themes panel
     info = sv.querySelector('.themes-panel>div>div:nth-child(2)')
-    info.querySelector('span').textContent = "Atom は"
-    info.querySelector('a.link').textContent = " スタイルシート "
-    span = document.createElement('span')
-    span.textContent = "を編集してスタイルを変更することもできます。"
-    info.appendChild(span)
-    tp1 = sv.querySelector('.themes-picker>div:nth-child(1)')
-    tp1.querySelector('.setting-title').textContent = "インターフェーステーマ"
-    tp1.querySelector('.setting-description').textContent = "タブ、ステータスバー、ツリービューとドロップダウンのスタイルを変更します。"
-    tp2 = sv.querySelector('.themes-picker>div:nth-child(2)')
-    tp2.querySelector('.setting-title').textContent = "シンタックステーマ"
-    tp2.querySelector('.setting-description').textContent = "テキストエディタの内側のスタイルを変更します。"
+    unless isAlreadyLocalized(info)
+      info.querySelector('span').textContent = "Atom は"
+      info.querySelector('a.link').textContent = " スタイルシート "
+      span = document.createElement('span')
+      span.textContent = "を編集してスタイルを変更することもできます。"
+      info.appendChild(span)
+      tp1 = sv.querySelector('.themes-picker>div:nth-child(1)')
+      tp1.querySelector('.setting-title').textContent = "インターフェーステーマ"
+      tp1.querySelector('.setting-description').textContent = "タブ、ステータスバー、ツリービューとドロップダウンのスタイルを変更します。"
+      tp2 = sv.querySelector('.themes-picker>div:nth-child(2)')
+      tp2.querySelector('.setting-title').textContent = "シンタックステーマ"
+      tp2.querySelector('.setting-description').textContent = "テキストエディタの内側のスタイルを変更します。"
+      info.setAttribute('data-localized', 'true')
 
     # Updates panel
     applySpecialHeading(sv, "Available Updates", 2, "利用可能なアップデート")
     applyTextWithOrg(sv.querySelector('.update-all-button.btn-primary'), "すべてアップデート")
     applyTextWithOrg(sv.querySelector('.update-all-button:not(.btn-primary)'), "アップデートをチェック")
     applyTextWithOrg(sv.querySelector('.alert.icon-hourglass'), "アップデートを確認中...")
-    applyTextWithOrg(sv.querySelector('.alert.icon-heart'), "インストール済みのパッケージはすべて最新です！")
+    applyTextWithOrg(sv.querySelector('.alert.icon-heart'), "インストールしたパッケージはすべて最新です！")
 
     # Install panel
-    applySectionHeadings(sv)
+    applySectionHeadings()
+    inst = document.querySelector('div.section:not(.themes-panel)')
+    info = inst.querySelector('.native-key-bindings')
+    unless isAlreadyLocalized(info)
+      info.querySelector('span:nth-child(2)').textContent = "パッケージ・テーマは "
+      tc = info.querySelector('span:nth-child(4)')
+      tc.textContent = tc.textContent.replace("and are installed to", "に公開されており ")
+      span = document.createElement('span')
+      span.textContent = " にインストールされます。"
+      info.appendChild(span)
+      info.setAttribute('data-localized', 'true')
+    applyTextWithOrg(inst.querySelector('.search-container .btn:nth-child(1)'), "パッケージ")
+    applyTextWithOrg(inst.querySelector('.search-container .btn:nth-child(2)'), "テーマ")
 
     # Buttons
-    for btn in sv.querySelectorAll('.meta-controls .install-button')
-      btn.textContent = "インストール"
-    for btn in sv.querySelectorAll('.meta-controls .settings')
-      btn.textContent = "設定"
-    for btn in sv.querySelectorAll('.meta-controls .uninstall-button')
-      btn.textContent = "アンインストール"
-    for btn in sv.querySelectorAll('.meta-controls .icon-playback-pause span')
-      btn.textContent = "無効にする"
-    for btn in sv.querySelectorAll('.meta-controls .icon-playback-play span')
-      btn.textContent = "有効にする"
+    applyButtonToolbar()
+
+  applyInstallPanelOnSwitch = () ->
+    applySectionHeadings(true)
+    applyButtonToolbar()
+    inst = document.querySelector('div.section:not(.themes-panel)')
+    info = inst.querySelector('.native-key-bindings')
+    info.querySelector('span:nth-child(2)').textContent = "パッケージ・テーマは "
 
   applySpecialHeading = (area, org, childIdx, text) ->
     sh = getTextMatchElement(area, '.section-heading', org)
-    return unless sh
+    return unless sh && !isAlreadyLocalized(sh)
     sh.childNodes[childIdx].textContent = null
     span = document.createElement('span')
     span.textContent = org
     applyTextWithOrg(span, text)
     sh.appendChild(span)
 
-  applySectionHeadings = (area) ->
+  applySectionHeadings = (force) ->
+    sv = document.querySelector('.settings-view')
     for sh in window.JapaneseMenu.defS.Settings.sectionHeadings
-      el = getTextMatchElement(area, '.section-heading', sh.label)
+      el = getTextMatchElement(sv, '.section-heading', sh.label)
       continue unless el
-      applyTextWithOrg(el, sh.value)
+      if !isAlreadyLocalized(el) || force
+        applyTextWithOrg(el, sh.value)
     for sh in window.JapaneseMenu.defS.Settings.subSectionHeadings
-      el = getTextMatchElement(area, '.sub-section-heading', sh.label)
+      el = getTextMatchElement(sv, '.sub-section-heading', sh.label)
       continue unless el
-      applyTextWithOrg(el, sh.value)
+      if !isAlreadyLocalized(el) || force
+        applyTextWithOrg(el, sh.value)
+
+  applyButtonToolbar = () ->
+    sv = document.querySelector('.settings-view')
+    for btn in sv.querySelectorAll('.meta-controls .install-button')
+      applyTextWithOrg(btn, "インストール")
+    for btn in sv.querySelectorAll('.meta-controls .settings')
+      applyTextWithOrg(btn, "設定")
+    for btn in sv.querySelectorAll('.meta-controls .uninstall-button')
+      applyTextWithOrg(btn, "アンインストール")
+    for btn in sv.querySelectorAll('.meta-controls .icon-playback-pause span')
+      applyTextWithOrg(btn, "無効にする")
+    for btn in sv.querySelectorAll('.meta-controls .icon-playback-play span')
+      applyTextWithOrg(btn, "有効にする")
 
   getTextMatchElement = (area, query, text) ->
     elems = area.querySelectorAll(query)
@@ -158,10 +193,7 @@ class JapaneseMenu
       if el.textContent.includes(text)
         result = el
         break
-    if isAlreadyLocalized(result)
-      return null
-    else
-      return result
+    return result
 
   isAlreadyLocalized = (elem) ->
     localized = elem.getAttribute('data-localized') if elem

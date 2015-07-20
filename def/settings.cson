@@ -34,6 +34,8 @@ Settings:
     {label: "Installed Themes", value: "インストール済みのテーマ"}
     {label: "Install Packages", value: "パッケージのインストール"}
     {label: "Featured Packages", value: "おすすめのパッケージ"}
+    {label: "Install Themes", value: "テーマのインストール"}
+    {label: "Featured Themes", value: "おすすめのテーマ"}
   ]
   subSectionHeadings: [
     {label: "Community Packages", value: "コミュニティパッケージ"}
