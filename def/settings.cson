@@ -89,6 +89,11 @@ Settings:
       title: "ペースト時に自動インデント"
     }
     {
+      id: 'editor.backUpBeforeSaving'
+      title: "保存前にバックアップを取る"
+      desc: "ファイルの保存中に I/O エラーが発生した場合にファイルの内容が失われないよう、バックアップ用の一時コピーを作成します。"
+    }
+    {
       id: 'editor.confirmCheckoutHeadRevision'
       title: "変更を破棄して HEAD リビジョンに戻す時に確認する"
     }
