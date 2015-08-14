@@ -1,6 +1,7 @@
 ## 1.3.0
 * Atom v1.0.7 に対応
-* 設定画面の追加項目 `editor.backUpBeforeSaving`(v.1.0.4) を日本語化
+* Atom v1.0.4 に対応
+    * 設定画面の追加項目 `editor.backUpBeforeSaving` を日本語化
 
 ## 1.2.1
 * Windows のみ設定画面のフォントにエディタ設定内のフォント指定を適用
