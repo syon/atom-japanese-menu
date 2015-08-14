@@ -55,6 +55,13 @@ class JapaneseMenu
 
       sv = document.querySelector('.settings-view')
 
+      # Font
+      font = atom.config.get('editor.fontFamily')
+      if font
+        sv.style["fontFamily"] = font
+      else if process.platform == 'win32'
+        sv.style["fontFamily"] = "'Segoe UI', Meiryo"
+
       # Load all settings panels
       lastMenu = sv.querySelector('.panels-menu .active a')
       panelMenus = sv.querySelectorAll('.settings-view .panels-menu li a')
