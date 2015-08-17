@@ -19,10 +19,9 @@ class JapaneseMenu
 
     # Settings (on init & open & open in menu)
     @updateSettings()
-    atom.commands.add 'atom-workspace', 'settings-view:open', =>
-      @updateSettings(true)
-    atom.workspace.onDidOpen  =>
-      @updateSettings(true)
+    atom.workspace.onDidChangeActivePaneItem (item) =>
+      if item.uri is 'atom://config'
+        @updateSettings(true)
     
   updateMenu: (menuList, def) ->
     return if not def
