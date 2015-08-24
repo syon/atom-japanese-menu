@@ -17,11 +17,12 @@ class JapaneseMenu
     # ContextMenu
     @updateContextMenu()
 
-    # Settings (on init and open)
+    # Settings (on init & open & open in menu)
     @updateSettings()
-    atom.commands.add 'atom-workspace', 'settings-view:open', =>
-      @updateSettings(true)
-
+    atom.workspace.onDidChangeActivePaneItem (item) =>
+      if item isnt undefined and item.uri is 'atom://config'
+        @updateSettings(true)
+    
   updateMenu: (menuList, def) ->
     return if not def
     for menu in menuList
