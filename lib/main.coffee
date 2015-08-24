@@ -62,6 +62,10 @@ class JapaneseMenu
           sv.style["fontFamily"] = font
         else
           sv.style["fontFamily"] = "'Segoe UI', Meiryo"
+      else if process.platform == 'linux'
+        font = atom.config.get('editor.fontFamily')
+        sv.style["fontFamily"] = font
+        settingsTab.style["fontFamily"] = font
 
       # Load all settings panels
       lastMenu = sv.querySelector('.panels-menu .active a')
