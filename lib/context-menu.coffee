@@ -1,14 +1,12 @@
 class ContextMenu
 
-  @localize: ->
-    CSON = require 'cson'
-    @defC = CSON.load __dirname + "/../def/context.cson"
-    @updateContextMenu()
+  @localize: (defC) ->
+    @updateContextMenu(defC)
     atom.menu.update()
 
-  @updateContextMenu: () ->
+  @updateContextMenu: (defC) ->
     for itemSet in atom.contextMenu.itemSets
-      set = @defC.Context[itemSet.selector]
+      set = defC.Context[itemSet.selector]
       continue if not set
       for item in itemSet.items
         continue if item.type is "separator"

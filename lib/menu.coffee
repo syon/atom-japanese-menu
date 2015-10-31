@@ -1,8 +1,6 @@
 class Menu
 
-  @localize: ->
-    CSON = require 'cson'
-    defM = CSON.load __dirname + "/../def/menu_#{process.platform}.cson"
+  @localize: (defM) ->
     @updateMenu(atom.menu.template, defM.Menu)
     atom.menu.update()
 
