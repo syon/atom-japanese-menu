@@ -1,4 +1,4 @@
-class SettingsView
+class Preferences
 
   @localize: (defS) ->
     @defS = defS
@@ -191,4 +191,4 @@ class SettingsView
     elem.setAttribute('title', before)
     elem.setAttribute('data-localized', 'true')
 
-module.exports = SettingsView
+module.exports = Preferences

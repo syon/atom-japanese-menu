@@ -1,7 +1,7 @@
-CSON         = require 'cson'
-Menu         = require './menu'
-ContextMenu  = require './context-menu'
-SettingsView = require './settings-view'
+CSON        = require 'cson'
+Menu        = require './menu'
+ContextMenu = require './context-menu'
+Preferences = require './preferences'
 
 class JapaneseMenu
 
@@ -16,7 +16,7 @@ class JapaneseMenu
   delay: () =>
     Menu.localize(@defM)
     ContextMenu.localize(@defC)
-    SettingsView.localize(@defS)
+    Preferences.localize(@defS)
 
 
 module.exports = window.JapaneseMenu = new JapaneseMenu()
