@@ -72,7 +72,7 @@ class Preferences
     ext = @sv.querySelector('.settings-view .icon-link-external')
     PU.applyTextWithOrg ext, "設定フォルダを開く"
 
-  applyInstallPanelOnSwitch: () ->
+  applyInstallPanelOnSwitch = () ->
     PU.applySectionHeadings(true)
     PU.applyButtonToolbar()
     inst = document.querySelector('div.section:not(.themes-panel)')

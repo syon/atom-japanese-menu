@@ -3,17 +3,37 @@ PU = require './preferences-util'
 class PreferencesSettings
 
   @localize: () ->
-    applyToPanel()
 
-  applyToPanel = () ->
     # Settings panel
     for d in window.JapaneseMenu.defS.Settings.settings
       applyTextContentBySettingsId(d)
 
-    sv = document.querySelector('.settings-view')
+    @sv = document.querySelector('.settings-view')
 
     # Keybindings
-    info = sv.querySelector('.keybinding-panel>div:nth-child(2)')
+    @localizeKeybindingsPanel()
+
+    # Themes panel
+    @localizeThemesPanel()
+
+    # Updates panel
+    @localizeUpdatesPanel()
+
+    # Install panel
+    @localizeInstallPanel()
+
+    # Buttons
+    PU.applyButtonToolbar()
+
+  applyTextContentBySettingsId = (data) ->
+    el = document.querySelector("[id='#{data.id}']")
+    return unless el
+    ctrl = el.closest('.control-group')
+    PU.applyTextWithOrg(ctrl.querySelector('.setting-title'), data.title)
+    PU.applyTextWithOrg(ctrl.querySelector('.setting-description'), data.desc)
+
+  @localizeKeybindingsPanel: () =>
+    info = @sv.querySelector('.keybinding-panel>div:nth-child(2)')
     unless PU.isAlreadyLocalized(info)
       info.querySelector('span:nth-child(2)').textContent = "これらのキーバインドは　"
       info.querySelector('span:nth-child(4)').textContent = "をクリック（コピー）して"
@@ -23,30 +43,30 @@ class PreferencesSettings
       info.appendChild(span)
       info.setAttribute('data-localized', 'true')
 
-    # Themes panel
-    info = sv.querySelector('.themes-panel>div>div:nth-child(2)')
+  @localizeThemesPanel: () =>
+    info = @sv.querySelector('.themes-panel>div>div:nth-child(2)')
     unless PU.isAlreadyLocalized(info)
       info.querySelector('span').textContent = "Atom は"
       info.querySelector('a.link').textContent = " スタイルシート "
       span = document.createElement('span')
       span.textContent = "を編集してスタイルを変更することもできます。"
       info.appendChild(span)
-      tp1 = sv.querySelector('.themes-picker>div:nth-child(1)')
+      tp1 = @sv.querySelector('.themes-picker>div:nth-child(1)')
       tp1.querySelector('.setting-title').textContent = "インターフェーステーマ"
       tp1.querySelector('.setting-description').textContent = "タブ、ステータスバー、ツリービューとドロップダウンのスタイルを変更します。"
-      tp2 = sv.querySelector('.themes-picker>div:nth-child(2)')
+      tp2 = @sv.querySelector('.themes-picker>div:nth-child(2)')
       tp2.querySelector('.setting-title').textContent = "シンタックステーマ"
       tp2.querySelector('.setting-description').textContent = "テキストエディタの内側のスタイルを変更します。"
       info.setAttribute('data-localized', 'true')
 
-    # Updates panel
-    PU.applySpecialHeading(sv, "Available Updates", 2, "利用可能なアップデート")
-    PU.applyTextWithOrg(sv.querySelector('.update-all-button.btn-primary'), "すべてアップデート")
-    PU.applyTextWithOrg(sv.querySelector('.update-all-button:not(.btn-primary)'), "アップデートをチェック")
-    PU.applyTextWithOrg(sv.querySelector('.alert.icon-hourglass'), "アップデートを確認中...")
-    PU.applyTextWithOrg(sv.querySelector('.alert.icon-heart'), "インストールしたパッケージはすべて最新です！")
+  @localizeUpdatesPanel: () =>
+    PU.applySpecialHeading(@sv, "Available Updates", 2, "利用可能なアップデート")
+    PU.applyTextWithOrg(@sv.querySelector('.update-all-button.btn-primary'), "すべてアップデート")
+    PU.applyTextWithOrg(@sv.querySelector('.update-all-button:not(.btn-primary)'), "アップデートをチェック")
+    PU.applyTextWithOrg(@sv.querySelector('.alert.icon-hourglass'), "アップデートを確認中...")
+    PU.applyTextWithOrg(@sv.querySelector('.alert.icon-heart'), "インストールしたパッケージはすべて最新です！")
 
-    # Install panel
+  @localizeInstallPanel: () ->
     PU.applySectionHeadings()
     inst = document.querySelector('div.section:not(.themes-panel)')
     info = inst.querySelector('.native-key-bindings')
@@ -60,16 +80,6 @@ class PreferencesSettings
       info.setAttribute('data-localized', 'true')
     PU.applyTextWithOrg(inst.querySelector('.search-container .btn:nth-child(1)'), "パッケージ")
     PU.applyTextWithOrg(inst.querySelector('.search-container .btn:nth-child(2)'), "テーマ")
-
-    # Buttons
-    PU.applyButtonToolbar()
-
-  applyTextContentBySettingsId = (data) ->
-    el = document.querySelector("[id='#{data.id}']")
-    return unless el
-    ctrl = el.closest('.control-group')
-    PU.applyTextWithOrg(ctrl.querySelector('.setting-title'), data.title)
-    PU.applyTextWithOrg(ctrl.querySelector('.setting-description'), data.desc)
 
 
 module.exports = PreferencesSettings
