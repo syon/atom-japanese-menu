@@ -1,10 +1,10 @@
 Menu = require './menu'
+ContextMenu = require './context-menu'
 
 class JapaneseMenu
 
   constructor: ->
     CSON = require 'cson'
-    @defC = CSON.load __dirname + "/../def/context.cson"
     @defS = CSON.load __dirname + "/../def/settings.cson"
 
   activate: (state) ->
@@ -13,22 +13,12 @@ class JapaneseMenu
   delay: () =>
     Menu.localize()
 
-    # ContextMenu
-    @updateContextMenu()
+    ContextMenu.localize()
 
     # Settings (on init and open)
     @updateSettings()
     atom.commands.add 'atom-workspace', 'settings-view:open', =>
       @updateSettings(true)
-
-  updateContextMenu: () ->
-    for itemSet in atom.contextMenu.itemSets
-      set = @defC.Context[itemSet.selector]
-      continue if not set
-      for item in itemSet.items
-        continue if item.type is "separator"
-        label = set[item.command]
-        item.label = label if label?
 
   updateSettings: (onSettingsOpen = false) ->
     setTimeout(@delaySettings, 0, onSettingsOpen)
