@@ -4,11 +4,10 @@ class PreferencesSettings
 
   @localize: () ->
 
-    # Settings panel
-    for d in window.JapaneseMenu.defS.Settings.settings
-      applyTextContentBySettingsId(d)
-
     @sv = document.querySelector('.settings-view')
+
+    # Settings panel
+    @localizeSettingsPanel()
 
     # Keybindings
     @localizeKeybindingsPanel()
@@ -24,6 +23,10 @@ class PreferencesSettings
 
     # Buttons
     PU.applyButtonToolbar()
+
+  @localizeSettingsPanel: () ->
+    for d in window.JapaneseMenu.defS.Settings.settings
+      applyTextContentBySettingsId(d)
 
   applyTextContentBySettingsId = (data) ->
     el = document.querySelector("[id='#{data.id}']")
