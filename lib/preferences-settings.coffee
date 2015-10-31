@@ -4,6 +4,7 @@ class PreferencesSettings
 
   @localize: () ->
 
+    @defS = window.JapaneseMenu.defS.Settings
     @sv = document.querySelector('.settings-view')
 
     # Settings panel
@@ -25,7 +26,17 @@ class PreferencesSettings
     PU.applyButtonToolbar()
 
   @localizeSettingsPanel: () ->
-    for d in window.JapaneseMenu.defS.Settings.settings
+    # Notes
+    for note in @defS.settings.notes
+      info = @sv.querySelector("[id='#{note.id}']")
+      unless PU.isAlreadyLocalized(info)
+        for lt, index in note.childNodes
+          continue unless lt
+          info.childNodes[index].textContent = lt
+        info.setAttribute('data-localized', 'true')
+
+    # Every settings item
+    for d in @defS.settings.controls
       applyTextContentBySettingsId(d)
 
   applyTextContentBySettingsId = (data) ->
