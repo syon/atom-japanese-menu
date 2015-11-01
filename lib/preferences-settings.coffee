@@ -30,9 +30,7 @@ class PreferencesSettings
     for note in @defS.settings.notes
       info = @sv.querySelector("[id='#{note.id}']")
       unless PU.isAlreadyLocalized(info)
-        for lt, index in note.childNodes
-          continue unless lt
-          info.childNodes[index].textContent = lt
+        info.innerHTML = note.html
         info.setAttribute('data-localized', 'true')
 
     # Every settings item
