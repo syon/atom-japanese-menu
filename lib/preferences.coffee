@@ -7,10 +7,10 @@ class Preferences
     @defS = defS
     @updateSettings()
     atom.workspace.onDidChangeActivePaneItem (item) =>
-        if item isnt undefined
-          if item.uri isnt undefined
-            if item.uri.indexOf('atom://config') isnt -1
-              @updateSettings(true)
+      if item isnt undefined
+        if item.uri isnt undefined
+          if item.uri.indexOf('atom://config') isnt -1
+            @updateSettings(true)
 
   @updateSettings: (onSettingsOpen = false) ->
     setTimeout(@delaySettings, 0, onSettingsOpen)
@@ -51,6 +51,7 @@ class Preferences
     else if process.platform == 'linux'
       font = atom.config.get('editor.fontFamily')
       @sv.style["fontFamily"] = font
+      settingsTab = document.querySelector('.tab-bar [data-type="SettingsView"]')
       settingsTab.style["fontFamily"] = font
 
   @loadAllSettingsPanels: () =>
