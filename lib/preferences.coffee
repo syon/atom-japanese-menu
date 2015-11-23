@@ -6,8 +6,11 @@ class Preferences
   @localize: (defS) ->
     @defS = defS
     @updateSettings()
-    atom.commands.add 'atom-workspace', 'settings-view:open', =>
-      @updateSettings(true)
+    atom.workspace.onDidChangeActivePaneItem (item) =>
+        if item isnt undefined
+          if item.uri isnt undefined
+            if item.uri.indexOf('atom://config') isnt -1
+              @updateSettings(true)
 
   @updateSettings: (onSettingsOpen = false) ->
     setTimeout(@delaySettings, 0, onSettingsOpen)
