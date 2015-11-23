@@ -1,7 +1,8 @@
-## 1.6.0
+## 1.6.1
 * Atom v1.2.3 に対応
-* 不具合修正  
-  [Atomを再起動すると設定画面が英語に戻ってしまう。 · Issue #9 · syon/atom-japanese-menu](https://github.com/syon/atom-japanese-menu/issues/9)
+* Fix bugs  
+  - [Atomを再起動すると設定画面が英語に戻ってしまう。 · Issue #9](https://github.com/syon/atom-japanese-menu/issues/9)
+  - Linux 版の設定画面で動作しないのを修正
 
 ## 1.5.0
 * Atom v1.1.0 に対応
