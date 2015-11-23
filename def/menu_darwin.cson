@@ -55,6 +55,8 @@ Menu:
         value: "ペインを閉じる"
       "Close Window":
         value: "ウインドウを閉じる"
+      "Close All Tabs":
+        value: "タブをすべて閉じる"
   Edit:
     value: "編集"
     submenu:

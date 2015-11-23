@@ -28,6 +28,8 @@ Menu:
         value: "ウインドウを閉じる(&E)"
       "Quit":
         value: "終了"
+      "Close All Tabs":
+        value: "タブをすべて閉じる"
   "&Edit":
     value: "編集(&E)"
     submenu:
@@ -283,6 +285,8 @@ Menu:
         value: "問題の報告"
       "Search Issues":
         value: "報告されている問題"
+      "About Atom":
+        value: "Atom について"
       "Release Notes":
         value: "リリースノート"
       "Welcome Guide":
