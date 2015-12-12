@@ -5,6 +5,8 @@ Preferences = require './preferences'
 
 class JapaneseMenu
 
+  pref: {done: false}
+
   constructor: ->
     @defM = CSON.load __dirname + "/../def/menu_#{process.platform}.cson"
     @defC = CSON.load __dirname + "/../def/context.cson"
