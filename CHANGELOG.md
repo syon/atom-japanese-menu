@@ -1,3 +1,7 @@
+## 1.6.2
+* Fix bugs  
+  - [設定画面に再フォーカスした時に表示状態が維持されない · Issue #12](https://github.com/syon/atom-japanese-menu/issues/12)
+
 ## 1.6.1
 * Atom v1.2.3 に対応
 * Fix bugs  
