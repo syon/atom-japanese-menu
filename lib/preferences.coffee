@@ -10,7 +10,8 @@ class Preferences
       if item isnt undefined
         if item.uri isnt undefined
           if item.uri.indexOf('atom://config') isnt -1
-            @updateSettings(true)
+            unless window.JapaneseMenu.pref.done
+              @updateSettings(true)
 
   @updateSettings: (onSettingsOpen = false) ->
     setTimeout(@delaySettings, 0, onSettingsOpen)
@@ -38,6 +39,7 @@ class Preferences
       for btn in btns
         btn.addEventListener('click', applyInstallPanelOnSwitch)
 
+      window.JapaneseMenu.pref.done = true
     catch e
       console.error "日本語化に失敗しました。", e
 
