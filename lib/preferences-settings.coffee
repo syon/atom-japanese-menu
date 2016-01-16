@@ -22,6 +22,21 @@ class PreferencesSettings
     # Install panel
     @localizeInstallPanel()
 
+######
+    for pkgc in document.querySelectorAll(".package-container")
+      pkgc.onclick = ()=>
+        pds = @sv.querySelectorAll('.settings-view .package-detail')
+        current_pd
+        for pd in pds
+          if pd.style.display != 'none'
+            current_pd = pd
+        pkg_name = current_pd.querySelector('.card-name a').text
+        console.log(pkg_name)
+        st = pd.querySelector(".setting-title")
+        st.innerHTML = 'サンプルテキスト'
+        console.dir st
+######
+
     # Buttons
     PU.applyButtonToolbar()
 
