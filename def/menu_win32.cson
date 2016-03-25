@@ -16,16 +16,16 @@ Menu:
         value: "最後に使用したファイルを開く(&I)"
       "Se&ttings":
         value: "環境設定(&T)..."
-      "Open Your Config":
-        value: "個人設定を開く"
-      "Open Your Init Script":
-        value: "起動スクリプトを開く"
-      "Open Your Keymap":
-        value: "キーマップを開く"
-      "Open Your Snippets":
-        value: "スニペットを開く"
-      "Open Your Stylesheet":
-        value: "スタイルシートを開く"
+      "Config…":
+        value: "個人設定..."
+      "Init Script…":
+        value: "起動スクリプト..."
+      "Keymap…":
+        value: "キーマップ..."
+      "Snippets…":
+        value: "スニペット..."
+      "Stylesheet…":
+        value: "スタイルシート..."
       "&Save":
         value: "保存(&S)"
       "Save &As…":
@@ -148,8 +148,6 @@ Menu:
   "&View":
     value: "表示(&V)"
     submenu:
-      "&Reload":
-        value: "再読み込み(&R)"
       "Toggle &Full Screen":
         value: "フルスクリーン切替(&F)"
       "Toggle Menu Bar":
@@ -184,8 +182,8 @@ Menu:
         submenu:
           "Open In &Dev Mode…":
             value: "開発モードで開く(&D)"
-          "Run &Atom Specs":
-            value: "Atom Specs を実行(&A)"
+          "&Reload Window":
+            value: "ウィンドウの再読み込み(&R)"
           "Run Package &Specs":
             value: "パッケージ Specs を実行(&S)"
           "Toggle Developer &Tools":
@@ -258,6 +256,8 @@ Menu:
         value: "次を置換"
       "Replace All":
         value: "すべて置換"
+      "Clear History":
+        value: "履歴をクリア"
       "Find Buffer":
         value: "バッファを検索"
       "Find File":
@@ -287,7 +287,5 @@ Menu:
         value: "報告されている問題"
       "About Atom":
         value: "Atom について"
-      "Release Notes":
-        value: "リリースノート"
       "Welcome Guide":
         value: "ウェルカムガイド"

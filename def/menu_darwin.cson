@@ -6,18 +6,20 @@ Menu:
         value: "Atom について"
       "View License":
         value: "ライセンスを表示"
+      "Check for Update":
+        value: "アップデートを確認"
       "Preferences…":
         value: "環境設定..."
-      "Open Your Config":
-        value: "個人設定を開く"
-      "Open Your Init Script":
-        value: "起動スクリプトを開く"
-      "Open Your Keymap":
-        value: "キーマップを開く"
-      "Open Your Snippets":
-        value: "スニペットを開く"
-      "Open Your Stylesheet":
-        value: "スタイルシートを開く"
+      "Config…":
+        value: "個人設定..."
+      "Init Script…":
+        value: "起動スクリプト..."
+      "Keymap…":
+        value: "キーマップ..."
+      "Snippets…":
+        value: "スニペット..."
+      "Stylesheet…":
+        value: "スタイルシート..."
       "Install Shell Commands":
         value: "シェルコマンドをインストール"
       "Hide Atom":
@@ -28,8 +30,6 @@ Menu:
         value: "すべてを表示"
       Quit:
         value: "Atom を終了"
-      "Check for Update":
-        value: "アップデートを確認"
   File:
     value: "ファイル"
     submenu:
@@ -160,6 +160,59 @@ Menu:
         value: "指定行に移動"
       "Select Grammar":
         value: "文法を選択"
+  View:
+    value: "表示"
+    submenu:
+      "Toggle Full Screen":
+        value: "フルスクリーン切替"
+      Panes:
+        value: "ペイン"
+        submenu:
+          "Split Up":
+            value: "ペイン分割 ↑"
+          "Split Down":
+            value: "ペイン分割 ↓"
+          "Split Left":
+            value: "ペイン分割 ←"
+          "Split Right":
+            value: "ペイン分割 →"
+          "Focus Next Pane":
+            value: "次のペインにフォーカス"
+          "Focus Previous Pane":
+            value: "前のペインにフォーカス"
+          "Focus Pane Above":
+            value: "ペインにフォーカス ↑"
+          "Focus Pane Below":
+            value: "ペインにフォーカス ↓"
+          "Focus Pane On Left":
+            value: "ペインにフォーカス ←"
+          "Focus Pane On Right":
+            value: "ペインにフォーカス →"
+          "Close Pane":
+            value: "ペインを閉じる"
+      Developer:
+        value: "開発"
+        submenu:
+          "Open In Dev Mode…":
+            value: "開発モードで開く..."
+          "Reload Window":
+            value: "ウィンドウの再読み込み"
+          "Run Package Specs":
+            value: "パッケージ Specs を実行"
+          "Toggle Developer Tools":
+            value: "デベロッパー ツール"
+      "Increase Font Size":
+        value: "フォントサイズの拡大"
+      "Decrease Font Size":
+        value: "フォントサイズの縮小"
+      "Reset Font Size":
+        value: "フォントサイズのリセット"
+      "Toggle Soft Wrap":
+        value: "自動折り返しの切替"
+      "Toggle Command Palette":
+        value: "コマンドパレット"
+      "Toggle Tree View":
+        value: "ツリービュー"
   Selection:
     value: "選択"
     submenu:
@@ -216,67 +269,14 @@ Menu:
         value: "次を置換"
       "Replace All":
         value: "すべて置換"
+      "Clear History":
+        value: "履歴をクリア"
       "Find Buffer":
         value: "バッファを検索"
       "Find File":
         value: "ファイルを検索"
       "Find Modified File":
         value: "修正されたファイルを検索"
-  View:
-    value: "表示"
-    submenu:
-      Reload:
-        value: "再読み込み"
-      "Toggle Full Screen":
-        value: "フルスクリーン切替"
-      Panes:
-        value: "ペイン"
-        submenu:
-          "Split Up":
-            value: "ペイン分割 ↑"
-          "Split Down":
-            value: "ペイン分割 ↓"
-          "Split Left":
-            value: "ペイン分割 ←"
-          "Split Right":
-            value: "ペイン分割 →"
-          "Focus Next Pane":
-            value: "次のペインにフォーカス"
-          "Focus Previous Pane":
-            value: "前のペインにフォーカス"
-          "Focus Pane Above":
-            value: "ペインにフォーカス ↑"
-          "Focus Pane Below":
-            value: "ペインにフォーカス ↓"
-          "Focus Pane On Left":
-            value: "ペインにフォーカス ←"
-          "Focus Pane On Right":
-            value: "ペインにフォーカス →"
-          "Close Pane":
-            value: "ペインを閉じる"
-      Developer:
-        value: "開発"
-        submenu:
-          "Open In Dev Mode…":
-            value: "開発モードで開く"
-          "Run Atom Specs":
-            value: "Atom Specs を実行"
-          "Run Package Specs":
-            value: "パッケージ Specs を実行"
-          "Toggle Developer Tools":
-            value: "デベロッパー ツール"
-      "Increase Font Size":
-        value: "フォントサイズの拡大"
-      "Decrease Font Size":
-        value: "フォントサイズの縮小"
-      "Reset Font Size":
-        value: "フォントサイズのリセット"
-      "Toggle Soft Wrap":
-        value: "自動折り返しの切替"
-      "Toggle Command Palette":
-        value: "コマンドパレット"
-      "Toggle Tree View":
-        value: "ツリービュー"
   Packages:
     value: "パッケージ"
   Window:
@@ -305,7 +305,5 @@ Menu:
         value: "問題の報告"
       "Search Issues":
         value: "報告されている問題"
-      "Release Notes":
-        value: "リリースノート"
       "Welcome Guide":
         value: "ウェルカムガイド"
