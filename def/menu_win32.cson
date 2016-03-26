@@ -245,9 +245,9 @@ Menu:
       "Toggle Find in Buffer":
         value: "検索パネル切替"
       "Find in Project":
-        value: "プロジェクト内で検索..."
+        value: "プロジェクト内検索..."
       "Toggle Find in Project":
-        value: "プロジェクト内で検索パネル切替"
+        value: "プロジェクト内検索パネル切替"
       "Find Next":
         value: "次を検索"
       "Find Previous":
