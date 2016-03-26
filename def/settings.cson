@@ -38,6 +38,7 @@ Settings:
     {label: "Featured Themes", value: "おすすめのテーマ"}
   ]
   subSectionHeadings: [
+    {label: "Invisible", value: "不可視文字"}
     {label: "Community Packages", value: "コミュニティパッケージ"}
     {label: "Community Themes", value: "コミュニティテーマ"}
     {label: "Core Themes", value: "コアテーマ"}
@@ -58,14 +59,31 @@ Settings:
     ]
     controls: [
       {
+        id: 'core.allowPendingPaneItems'
+        title: "プレビュータブを使う"
+        desc: "ツリービューなどでファイルを選択した時にタブをプレビュー状態で開きます。
+               プレビュー時はタブ名が斜体となり、別のファイル選択時にタブが使い回されます。
+               ダブルクリックまたは編集を開始することでプレビュー状態が解除されます。"
+      }
+      {
         id: 'core.audioBeep'
         title: "ビープ音を鳴らす"
         desc: "処理が予期したとおりに実行されなかったり、結果が何も得られなかった場合にシステムのビープ音を鳴らします。"
       }
       {
+        id: 'core.automaticallyUpdate'
+        title: "自動アップデート"
+        desc: "新しいバージョンの Atom がリリースされていた場合に自動でアップデートします。"
+      }
+      {
         id: 'core.autoHideMenuBar'
         title: "メニューバーを自動的に隠す"
         desc: "メニューバーを自動的に隠して Alt キーで切り替えます。この設定は Windows と Linux でのみサポートされます。"
+      }
+      {
+        id: 'core.closeEmptyWindows'
+        title: "空になったウインドウをタブと同様に閉じる"
+        desc: "ウインドウ内にタブもペインもない状態でタブを閉じるコマンドを与えた場合、ウインドウを閉じます。"
       }
       {
         id: 'core.destroyEmptyPanes'

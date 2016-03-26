@@ -46,6 +46,8 @@ Context:
     "tabs:split-down": "ペイン分割 ↓"
     "tabs:split-left": "ペイン分割 ←"
     "tabs:split-right": "ペイン分割 →"
+  ".tab.pending-tab":
+    "tabs:keep-pending-tab": "プレビュー状態を解除"
   ".tab-bar":
     "pane:reopen-closed-item": "閉じたタブを開く"
   ".tree-view.full-menu":
