@@ -6,14 +6,6 @@ Menu:
         value: "Atom について"
       "View License":
         value: "ライセンスを表示"
-      "Restart and Install Update":
-        value: "Restart and Install Update"
-      "Check for Update":
-        value: "Check for Update"
-      "Checking for Update":
-        value: "Checking for Update"
-      "Downloading Update":
-        value: "Downloading Update"
       "Preferences…":
         value: "環境設定..."
       "Config…":
