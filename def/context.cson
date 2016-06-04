@@ -12,10 +12,10 @@ Context:
     "core:paste": "ペースト"
     "core:delete": "削除"
     "core:select-all": "すべて選択"
-    "pane:split-up": "ペイン分割 ↑"
-    "pane:split-down": "ペイン分割 ↓"
-    "pane:split-left": "ペイン分割 ←"
-    "pane:split-right": "ペイン分割 →"
+    "pane:split-up-and-copy-active-item": "ペイン分割･複製 ↑"
+    "pane:split-down-and-copy-active-item": "ペイン分割･複製 ↓"
+    "pane:split-left-and-copy-active-item": "ペイン分割･複製 ←"
+    "pane:split-right-and-copy-active-item": "ペイン分割･複製 →"
     "pane:close": "ペインを閉じる"
   "atom-pane":
     "pane:split-up": "ペイン分割 ↑"
@@ -40,12 +40,15 @@ Context:
     "tabs:close-tab": "タブを閉じる"
     "tabs:close-other-tabs": "他のタブをすべて閉じる"
     "tabs:close-tabs-to-right": "右側のタブを閉じる"
+    "tabs:close-tabs-to-left": "左側のタブを閉じる"
     "tabs:close-saved-tabs": "保存したタブを閉じる"
     "tabs:close-all-tabs": "タブをすべて閉じる"
     "tabs:split-up": "ペイン分割 ↑"
     "tabs:split-down": "ペイン分割 ↓"
     "tabs:split-left": "ペイン分割 ←"
     "tabs:split-right": "ペイン分割 →"
+  ".tab.texteditor":
+    "tabs:open-in-new-window": "新規ウインドウで開く"
   ".tab.pending-tab":
     "tabs:keep-pending-tab": "プレビュー状態を解除"
   ".tab-bar":
