@@ -1,3 +1,8 @@
+## 1.7.1
+* Atom v1.7.4 に対応
+* Fix bugs
+  - [osx版でアップデート系メニューが表示されない事象への対処 by GeroOf · Pull Request #15](https://github.com/syon/atom-japanese-menu/pull/15)
+
 ## 1.7.0
 * Atom v1.6.0 に対応
 
