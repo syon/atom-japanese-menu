@@ -80,6 +80,13 @@ Menu:
             value: "行を削除(&E)"
           "&Join Lines":
             value: "行を結合(&J)"
+      Columns:
+        value: "列"
+        submenu:
+          "Move Selection &Left":
+            value: "選択範囲を左に移動(&L)"
+          "Move Selection &Right":
+            value: "選択範囲を右に移動(&R)"
       Text:
         value: "テキスト"
         submenu:

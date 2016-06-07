@@ -93,6 +93,13 @@ Menu:
             value: "行を削除"
           "Join Lines":
             value: "行を結合"
+      Columns:
+        value: "列"
+        submenu:
+          "Move Selection Left":
+            value: "選択範囲を左に移動"
+          "Move Selection Right":
+            value: "選択範囲を右に移動"
       Text:
         value: "テキスト"
         submenu:
