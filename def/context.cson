@@ -18,19 +18,15 @@ Context:
     "pane:split-right-and-copy-active-item": "ペイン分割･複製 →"
     "pane:close": "ペインを閉じる"
   "atom-pane":
-    "pane:split-up": "ペイン分割 ↑"
-    "pane:split-down": "ペイン分割 ↓"
-    "pane:split-left": "ペイン分割 ←"
-    "pane:split-right": "ペイン分割 →"
+    "pane:split-up-and-copy-active-item": "ペイン分割 ↑"
+    "pane:split-down-and-copy-active-item": "ペイン分割 ↓"
+    "pane:split-left-and-copy-active-item": "ペイン分割 ←"
+    "pane:split-right-and-copy-active-item": "ペイン分割 →"
     "pane:close": "ペインを閉じる"
   "atom-text-editor:not([mini])":
     "encoding-selector:show": "エンコーディング選択"
     "spell-check:correct-misspelling": "スペル修正"
     "symbols-view:go-to-declaration": "宣言に移動"
-  "atom-pane[data-active-item-path] .item-views":
-    "tree-view:reveal-active-file": "ツリービューに表示"
-  "atom-pane[data-active-item-path] .tab.active":
-    "tree-view:reveal-active-file": "ツリービューに表示"
   ".overlayer":
     "autocomplete:toggle": "オートコンプリート"
     "grammar-selector:show": "文法を選択"
@@ -56,7 +52,7 @@ Context:
   ".tree-view.full-menu":
     "tree-view:add-file": "新規ファイル"
     "tree-view:add-folder": "新規フォルダ"
-    "tree-view:move": "移動・名称変更..."
+    "tree-view:move": "移動・名前を変更..."
     "tree-view:duplicate": "複製"
     "tree-view:remove": "削除"
     "tree-view:copy": "コピー"
@@ -78,7 +74,7 @@ Context:
   ".tree-view.full-menu .project-root > .header":
     "tree-view:add-file": "新規ファイル"
     "tree-view:add-folder": "新規フォルダ"
-    "tree-view:move": "移動・名称変更..."
+    "tree-view:move": "移動・名前を変更..."
     "tree-view:duplicate": "複製"
     "tree-view:remove": "削除"
     "tree-view:copy": "コピー"
@@ -106,3 +102,20 @@ Context:
     "tree-view:copy": "コピー"
     "tree-view:cut": "カット"
     "tree-view:paste": "ペースト"
+  "atom-pane[data-active-item-path] .item-views":
+    "tree-view:reveal-active-file": "ツリービューに表示"
+  "atom-pane[data-active-item-path] .tab.active":
+    "tree-view:rename": "移動・名前を変更..."
+    "tree-view:reveal-active-file": "ツリービューに表示"
+  ".platform-darwin atom-pane[data-active-item-path] .tab.active":
+    "tree-view:show-current-file-in-file-manager": "Finder で表示"
+  ".platform-win32 atom-pane[data-active-item-path] .tab.active":
+    "tree-view:show-current-file-in-file-manager": "エクスプローラで表示"
+  ".platform-linux atom-pane[data-active-item-path] .tab.active":
+    "tree-view:show-current-file-in-file-manager": "ファイルマネージャで表示"
+  ".platform-darwin atom-text-editor:not([mini])":
+    "tree-view:show-current-file-in-file-manager": "Finder で表示"
+  ".platform-win32 atom-text-editor:not([mini])":
+    "tree-view:show-current-file-in-file-manager": "エクスプローラで表示"
+  ".platform-linux atom-text-editor:not([mini])":
+    "tree-view:show-current-file-in-file-manager": "ファイルマネージャで表示"
