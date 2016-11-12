@@ -128,6 +128,29 @@ Settings:
         desc: "プロジェクト群を配置するディレクトリを指定します。パッケージジェネレータで作成されたパッケージはデフォルトでここが格納先となります。"
       }
       {
+        id: 'core.telemetryConsent'
+        title: "Atom チームに遠隔測定結果を送信する"
+        desc: "使用統計データと障害レポートを Atom チームに送信して機能向上に役立てることを許可します。"
+        select:
+          limited: "匿名で限定された使用統計データと障害レポートの送信を許可する"
+          no: "遠隔測定結果を送信しない"
+          undecided: "まだ決まっていない（次回起動時に再確認）"
+      }
+      {
+        id: 'core.useCustomTitleBar'
+        title: "カスタムタイトルバーを使う"
+      }
+      {
+        id: 'core.warnOnLargeFileLimit'
+        title: "重いファイルを開く時に警告するサイズ"
+        desc: "指定したファイルサイズ（メガバイト）より大きなファイルを開く前に警告します。"
+      }
+      {
+        id: 'editor.atomicSoftTabs'
+        title: "アトミック ソフトタブ"
+        desc: "カーソル移動の時、ソフトタブインデントの空白をタブ幅でスキップします。"
+      }
+      {
         id: 'editor.autoIndent'
         title: "自動インデント"
         desc: "新しい行を挿入（改行）した時、カーソル位置を自動的にインデントした位置に移動します。"
@@ -253,11 +276,6 @@ Settings:
         id: 'editor.undoGroupingInterval'
         title: "取り消し操作単位"
         desc: "ひとまとまりの操作と認識させて取り消し履歴に登録する間隔（ミリ秒）"
-      }
-      {
-        id: 'editor.useShadowDOM'
-        title: "Shadow DOM を使う"
-        desc: "パッケージやテーマによる表示上の問題があった場合に無効にしてください。このオプションはいずれ無くすため、対象のパッケージまたはテーマに issue で報告してください。"
       }
       {
         id: 'editor.zoomFontWhenCtrlScrolling'

@@ -43,6 +43,10 @@ class PreferencesSettings
     ctrl = el.closest('.control-group')
     PU.applyTextWithOrg(ctrl.querySelector('.setting-title'), data.title)
     PU.applyTextWithOrg(ctrl.querySelector('.setting-description'), data.desc)
+    return unless data.select
+    for o in el.querySelectorAll("option")
+      v = o.attributes["value"].value
+      o.innerText = data.select[v]
 
   @localizeKeybindingsPanel: () =>
     info = @sv.querySelector('.keybinding-panel>div:nth-child(2)')
