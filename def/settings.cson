@@ -1,8 +1,12 @@
 Settings:
   menu: [
     {
-      label: "Settings"
-      value: "設定"
+      label: "Core"
+      value: "コア設定"
+    }
+    {
+      label: "Editor"
+      value: "エディタ設定"
     }
     {
       label: "Keybindings"
