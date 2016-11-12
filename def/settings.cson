@@ -44,9 +44,13 @@ Settings:
   subSectionHeadings: [
     {label: "Invisible", value: "不可視文字"}
     {label: "Community Packages", value: "コミュニティパッケージ"}
+    {label: "Core Packages", value: "コアパッケージ"}
+    {label: "Development Packages", value: "開発パッケージ"}
+    {label: "Git Packages", value: "Git パッケージ"}
     {label: "Community Themes", value: "コミュニティテーマ"}
     {label: "Core Themes", value: "コアテーマ"}
     {label: "Development Themes", value: "開発テーマ"}
+    {label: "Git Themes", value: "Git テーマ"}
   ]
   settings: {
     notes: [
