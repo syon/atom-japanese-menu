@@ -40,8 +40,13 @@ Menu:
         value: "開く..."
       "Add Project Folder…":
         value: "プロジェクトフォルダを追加..."
+      "Reopen Project":
+        value: "プロジェクト履歴から開く"
+        submenu:
+          "Clear Project History":
+            value: "プロジェクト履歴をクリア"
       "Reopen Last Item":
-        value: "最後に使用したファイルを開く..."
+        value: "最後に使用したファイルを開く"
       Save:
         value: "保存"
       "Save As…":
@@ -204,7 +209,9 @@ Menu:
           "Reload Window":
             value: "ウィンドウの再読み込み"
           "Run Package Specs":
-            value: "パッケージ Specs を実行"
+            value: "パッケージスペックを実行"
+          "Run Benchmarks":
+            value: "ベンチマークを実行"
           "Toggle Developer Tools":
             value: "デベロッパー ツール"
       "Increase Font Size":
@@ -267,6 +274,8 @@ Menu:
         value: "プロジェクト内検索..."
       "Toggle Find in Project":
         value: "プロジェクト内検索パネル切替"
+      "Find All":
+        value: "すべて検索"
       "Find Next":
         value: "次を検索"
       "Find Previous":

@@ -13,6 +13,11 @@ Menu:
         value: "フォルダを開く..."
       "Add Project Folder…":
         value: "プロジェクトフォルダを追加..."
+      "Reopen Project":
+        value: "プロジェクト履歴から開く"
+        submenu:
+          "Clear Project History":
+            value: "プロジェクト履歴をクリア"
       "Reopen Last &Item":
         value: "最後に使用したファイルを開く(&I)"
       "&Save":
@@ -193,7 +198,7 @@ Menu:
           "&Reload Window":
             value: "ウィンドウの再読み込み(&R)"
           "Run Package &Specs":
-            value: "パッケージ Specs を実行(&S)"
+            value: "パッケージスペックを実行(&S)"
           "Toggle Developer &Tools":
             value: "デベロッパー ツール(&T)"
       "&Increase Font Size":
@@ -256,6 +261,8 @@ Menu:
         value: "プロジェクト内検索..."
       "Toggle Find in Project":
         value: "プロジェクト内検索パネル切替"
+      "Find All":
+        value: "すべて検索"
       "Find Next":
         value: "次を検索"
       "Find Previous":
