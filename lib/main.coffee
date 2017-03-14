@@ -1,4 +1,3 @@
-CSON        = require 'cson'
 Menu        = require './menu'
 ContextMenu = require './context-menu'
 Preferences = require './preferences'
@@ -8,9 +7,9 @@ class JapaneseMenu
   pref: {done: false}
 
   constructor: ->
-    @defM = CSON.load __dirname + "/../def/menu_#{process.platform}.cson"
-    @defC = CSON.load __dirname + "/../def/context.cson"
-    @defS = CSON.load __dirname + "/../def/settings.cson"
+    @defM = require "../def/menu_#{process.platform}"
+    @defC = require "../def/context"
+    @defS = require "../def/settings"
 
   activate: (state) ->
     setTimeout(@delay, 0)

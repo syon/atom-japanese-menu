@@ -1,3 +1,4 @@
+module.exports = {
 Menu:
   "&File":
     value: "ファイル(&F)"
@@ -296,3 +297,4 @@ Menu:
         value: "Atom について"
       "Welcome Guide":
         value: "ウェルカムガイド"
+}

@@ -1,3 +1,4 @@
+module.exports = {
 Context:
   "atom-workspace":
     "application:inspect": "要素の検証"
@@ -119,3 +120,4 @@ Context:
     "tree-view:show-current-file-in-file-manager": "エクスプローラで表示"
   ".platform-linux atom-text-editor:not([mini])":
     "tree-view:show-current-file-in-file-manager": "ファイルマネージャで表示"
+}

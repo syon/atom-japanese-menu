@@ -1,3 +1,4 @@
+module.exports = {
 Menu:
   Atom:
     value: "Atom"
@@ -312,3 +313,4 @@ Menu:
         value: "報告されている問題"
       "Welcome Guide":
         value: "ウェルカムガイド"
+}

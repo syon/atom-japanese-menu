@@ -1,3 +1,4 @@
+module.exports = {
 Settings:
   menu: [
     {
@@ -288,3 +289,4 @@ Settings:
       }
     ]
   }
+}
