@@ -1,7 +1,7 @@
 {
   "name": "japanese-menu",
   "main": "./lib/main",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "description": "メニューバーとコンテキストメニュー、設定画面を日本語化します。",
   "repository": {
     "type": "git",
@@ -11,8 +11,7 @@
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "readme": "# Atom - Japanese Menu\n\nAtom のメニューバーとコンテキストメニュー、設定画面を日本語化します。\n\n![screenshot](https://github.com/syon/atom-japanese-menu/raw/master/screenshot.png)\n\n![screenshot](https://github.com/syon/atom-japanese-menu/raw/master/screenshot2.png)\n\n![screenshot](https://github.com/syon/atom-japanese-menu/raw/master/screenshot3.png)\n",
   "readmeFilename": "README.md",
   "bugs": {
