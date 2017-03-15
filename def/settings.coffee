@@ -85,6 +85,11 @@ Settings:
         desc: "新しいバージョンの Atom がリリースされていた場合に自動でアップデートします。"
       }
       {
+        id: 'core.closeDeletedFileTabs'
+        title: "削除されたファイルのタブを閉じる"
+        desc: "Atom の外で削除されたファイルのタブを自動的に閉じます。"
+      }
+      {
         id: 'core.autoHideMenuBar'
         title: "メニューバーを自動的に隠す"
         desc: "メニューバーを自動的に隠して Alt キーで切り替えます。この設定は Windows と Linux でのみサポートされます。"
@@ -133,6 +138,16 @@ Settings:
         desc: "プロジェクト群を配置するディレクトリを指定します。パッケージジェネレータで作成されたパッケージはデフォルトでここが格納先となります。"
       }
       {
+        id: 'core.reopenProjectMenuCount'
+        title: "プロジェクト履歴の表示数"
+        desc: "メニュー「プロジェクト履歴から開く」に表示するプロジェクトの数を指定します。"
+      }
+      {
+        id: 'core.restorePreviousWindowsOnStart'
+        title: "起動時に前回のウインドウ表示状態を復元する"
+        desc: "アイコンもしくは atom コマンドから起動したときに、最後に開いていた Atom のウインドウすべてを復元します。"
+      }
+      {
         id: 'core.telemetryConsent'
         title: "Atom チームに遠隔測定結果を送信する"
         desc: "使用統計データと障害レポートを Atom チームに送信して機能向上に役立てることを許可します。"
@@ -144,6 +159,11 @@ Settings:
       {
         id: 'core.useCustomTitleBar'
         title: "カスタムタイトルバーを使う"
+      }
+      {
+        id: 'core.useProxySettingsWhenCallingApm'
+        title: "APM を呼ぶときにプロキシ設定を使う"
+        desc: "APM (Atom Package Manager) の apm コマンドラインツールを呼ぶときに、検出したプロキシ設定を使います。"
       }
       {
         id: 'core.warnOnLargeFileLimit'
@@ -229,6 +249,11 @@ Settings:
         id: 'editor.scrollSensitivity'
         title: "スクロール速度"
         desc: "マウスやトラックパッドでエディタをスクロールする時の速度"
+      }
+      {
+        id: 'editor.showCursorOnSelection'
+        title: "選択範囲にカーソルを表示"
+        desc: "選択範囲が存在する場合にカーソル（点滅するＩビーム）を表示します。"
       }
       {
         id: 'editor.showIndentGuide'
