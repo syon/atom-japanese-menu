@@ -72,6 +72,7 @@ class Preferences
     return unless menu
     for d in @defS.Settings.menu
       el = menu.querySelector("[name='#{d.label}']>a")
+      continue unless el
       PU.applyTextWithOrg el, d.value
 
     # Left-side button
