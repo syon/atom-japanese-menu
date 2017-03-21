@@ -1,7 +1,7 @@
 {
   "name": "japanese-menu",
   "main": "./lib/main",
-  "version": "1.11.1",
+  "version": "1.12.0",
   "description": "メニューバーとコンテキストメニュー、設定画面を日本語化します。",
   "repository": {
     "type": "git",
