@@ -319,18 +319,18 @@ Settings:
       }
       {
         id: 'system.windows.file-handler'
-        title: "ファイルを開くプログラムの選択"
-        desc: "ファイルを開くプログラムの選択にてAtomを追加。"
+        title: "ファイルを取扱うアプリとして登録する"
+        desc: "ファイルの関連付けを簡単にするために、Atom を「プログラムから開く...」の一覧に表示します。"
       }
       {
         id: 'system.windows.shell-menu-files'
-        title: "ファイル選択時右クリックメニューに追加"
-        desc: "エクスプローラでファイル選択時の右クリックメニューに\"Open with Atom\"を追加。"
+        title: "ファイルの右クリックメニューから開く"
+        desc: "エクスプローラでのファイル右クリックメニューに \"Open with Atom\" を追加します。"
       }
       {
         id: 'system.windows.shell-menu-folders'
-        title: "ディレクトリ選択時右クリックメニューに追加"
-        desc: "エクスプローラでディレクトリ選択時の右クリックメニューに\"Open with Atom\"を追加。"
+        title: "フォルダの右クリックメニューから開く"
+        desc: "エクスプローラでのフォルダ右クリックメニューに \"Open with Atom\" を追加します。"
       }
     ]
   }
