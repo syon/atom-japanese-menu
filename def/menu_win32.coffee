@@ -213,6 +213,8 @@ Menu:
         value: "コマンドパレット"
       "Toggle Tree View":
         value: "ツリービュー"
+      "Toggle Tool Bar":
+        value: "ツールバー"
   "&Selection":
     value: "選択(&S)"
     submenu:
