@@ -1,19 +1,19 @@
 module.exports = {
-    Description: [
-      {label: "Find in Current Buffer", value: "ŒŸõ"}
-      {label: "Find in Project", value: "ƒvƒƒWƒFƒNƒg‚ğŒŸõ"}
-    ]@
-    Buttons: [
-      {label: "Find", value: "ŒŸõ"}
-      {label: "Find All", value: "‚·‚×‚ÄŒŸõ"}
-      {label: "Replace", value: "’uŠ·"}
-      {label: "Replace All", value: "‚·‚×‚Ä’uŠ·"}
-    ]
-    PlaceholderText: [
-      {label: "Find in current buffer", value:"ŒŸõ•¶š—ñ"}
-      {label: "Replace in current buffer", value:"’uŠ·•¶š—ñ"}
-      {label: "Find in project", value:"ŒŸõ•¶š—ñ"}
-      {label: "Replace in project", value:"’uŠ·•¶š—ñ"}
-      {label: "File/directory pattern. eg. `src` to search in the \"src\" directory or `*.js` to search all", value:"ƒtƒ@ƒCƒ‹ or ƒfƒBƒŒƒNƒgƒŠƒpƒ^[ƒ“"}
-    ]
+  Description: [
+    { label: "Find in Current Buffer", value: "æ¤œç´¢" }
+    { label: "Find in Project", value: "ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã‚’æ¤œç´¢" }
+  ]
+  Buttons: [
+    { label: "Find", value: "æ¤œç´¢" }
+    { label: "Find All", value: "ã™ã¹ã¦æ¤œç´¢" }
+    { label: "Replace", value: "ç½®æ›" }
+    { label: "Replace All", value: "ã™ã¹ã¦ç½®æ›" }
+  ]
+  PlaceholderText: [
+    { label: "Find in current buffer", value: "æ¤œç´¢æ–‡å­—åˆ—" }
+    { label: "Replace in current buffer", value: "ç½®æ›æ–‡å­—åˆ—" }
+    { label: "Find in project", value: "æ¤œç´¢æ–‡å­—åˆ—" }
+    { label: "Replace in project", value: "ç½®æ›æ–‡å­—åˆ—" }
+    { label: "File/directory pattern. eg. `src` to search in the \"src\" directory or `*.js` to search all", value: "ãƒ•ã‚¡ã‚¤ãƒ« or ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãƒ‘ã‚¿ãƒ¼ãƒ³" }
+  ]
 }
