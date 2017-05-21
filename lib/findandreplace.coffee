@@ -34,7 +34,7 @@ class FindAndReplace
     
     panelElement = document.querySelector('atom-panel > .project-find')
     @localizeOnChangeOptions(items, panelElement, def)
-    opt = panelElement.querySelector(' .options-label .options')
+    opt = panelElement.querySelector('.options-label .options')
     opt.addEventListener 'DOMSubtreeModified', () =>
       @localizeOnChangeOptions(items, panelElement, def)
 
@@ -50,15 +50,15 @@ class FindAndReplace
     
     panelElement = document.querySelector('atom-panel > .find-and-replace')
     @localizeOnChangeOptions(items, panelElement, def)
-    opt = panelElement.querySelector(' .options-label .options')
+    opt = panelElement.querySelector('.options-label .options')
     opt.addEventListener 'DOMSubtreeModified', () =>
       @localizeOnChangeOptions(items, panelElement, def)
 
   @localizeOnChangeOptions: (items, panelElement, def) =>
     items.refs['descriptionLabel'].innerHTML = def.descriptionLabel
-    optLbl = panelElement.querySelector('.options-label > span:first-child')
-    optLbl.textContent = def.Heading
     ol = def.OptionsLabel
+    optLbl = panelElement.querySelector('.options-label > span:first-child')
+    optLbl.textContent = ol.Heading
     opt = panelElement.querySelector('.options-label .options')
     txt = opt.textContent
     txt = txt.replace 'Regex', ol.Regex
