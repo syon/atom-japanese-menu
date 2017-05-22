@@ -42,6 +42,7 @@ Settings:
     {label: "Installed Packages", value: "インストール済みのパッケージ"}
     {label: "Choose a Theme", value: "テーマの選択"}
     {label: "Installed Themes", value: "インストール済みのテーマ"}
+    {label: "Available Updates", value: "利用可能なアップデート"}
     {label: "Install Packages", value: "パッケージのインストール"}
     {label: "Featured Packages", value: "おすすめのパッケージ"}
     {label: "Install Themes", value: "テーマのインストール"}
