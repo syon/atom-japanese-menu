@@ -1,3 +1,10 @@
+## 1.13.0
+* Atom v1.17.0 に対応
+  - コンテキストメニューの更新
+  - 設定画面の更新
+* 検索パネルを日本語化
+  - [find and replace package 追加 by keijir · Pull Request \#18](https://github.com/syon/atom-japanese-menu/pull/18)
+
 ## 1.12.0
 * 設定画面の Windows 向け項目「システム設定」を日本語化
   - [add Locarize System Menu\(Win\) & Toggle Tool Bar by keijir · Pull Request \#17](https://github.com/syon/atom-japanese-menu/pull/17)
