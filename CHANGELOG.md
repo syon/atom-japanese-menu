@@ -1,3 +1,7 @@
+## 1.14.0
+* Atom v1.23.2 での問題に対応
+  - [Localization not working when preferences page is opened for a second time by chromia · Pull Request #21](https://github.com/syon/atom-japanese-menu/pull/21)
+
 ## 1.13.0
 * Atom v1.17.0 に対応
   - コンテキストメニューの更新
