@@ -28,6 +28,9 @@ Context:
     "encoding-selector:show": "エンコーディング選択"
     "spell-check:correct-misspelling": "スペル修正"
     "symbols-view:go-to-declaration": "宣言に移動"
+  ".item-views > atom-text-editor" :
+    "github:view-unstaged-changes-for-current-file": "Unstaged Changes の表示"
+    "github:view-staged-changes-for-current-file": "Staged Changes の表示"
   ".tree-view li.directory":
     "project-find:show-in-current-directory": "ディレクトリ内を検索"
   ".path-details.list-item":
@@ -131,4 +134,5 @@ Context:
     "tree-view:show-current-file-in-file-manager": "エクスプローラで表示"
   ".platform-linux atom-text-editor:not([mini])":
     "tree-view:show-current-file-in-file-manager": "ファイルマネージャで表示"
+
 }
