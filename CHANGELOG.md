@@ -1,3 +1,7 @@
+## 1.15.0
+* Atom 1.40.1 に対応 (Windows)
+  - [Compatible with Version 1.40.1 (Revised: Fix typo) by juggernautjp · Pull Request #25](https://github.com/syon/atom-japanese-menu/pull/25)
+
 ## 1.14.0
 * Atom v1.23.2 での問題に対応
   - [Localization not working when preferences page is opened for a second time by chromia · Pull Request #21](https://github.com/syon/atom-japanese-menu/pull/21)
